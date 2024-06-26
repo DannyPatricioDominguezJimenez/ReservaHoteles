@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('D4nny.2004'),
+
+            //prueba commit de prueba 2 uwu
         ]);
     }
 }
