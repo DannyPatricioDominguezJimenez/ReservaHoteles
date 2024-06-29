@@ -1,0 +1,87 @@
+body {
+    padding-top: 56px;
+    margin: 0;
+    color: #fff;
+}
+
+.hero__inicioSt {
+    width: 100%;
+    height: 100vh;
+    background-image: url('{{ asset('imagenes/playa.jpg') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #000;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ccc !important;
+}
+
+.btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-light:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000;
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #1100ff;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.map-container iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
