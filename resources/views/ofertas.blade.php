@@ -138,7 +138,6 @@
 
         .banner-content {
             text-align: center;
-            /* Centra el texto dentro del banner */
         }
 
         .social-media {
@@ -147,16 +146,12 @@
             align-items: center;
             gap: 10px;
             color: #fff;
-            /* Color blanco del texto */
         }
 
         .social-media i {
             font-size: 24px;
-            /* Tamaño de los iconos */
             margin: 0 10px;
-            /* Espacio entre los iconos */
             color: #fff;
-            /* Color blanco de los iconos */
         }
     </style>
 </head>
@@ -180,10 +175,10 @@
                         <a class="nav-link" href="{{ route('reservas') }}">Reservas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/Ofertas') }}">Ofertas</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url('/Ofertas') }}">Ofertas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url('/Conctactanos') }}">Contáctanos</a>
+                        <a class="nav-link" href="{{ url('/Conctactanos') }}">Contáctanos</a>
                     </li>
                 </ul>
             </div>
@@ -194,49 +189,54 @@
             </div>
         </div>
     </nav>
-    <!-- Contenido de la página -->
-    <div class="content">
-        <div class="banner-content">
-            <h1 class="mt-5" style="font-family: 'Bonheur Royale', cursive; font-size: 3rem;">Bienvenido al Hotel
-                Starfish</h1>
-            <p style="font-family: 'Bonheur Royale', cursive; font-size: 1.5rem;">"Donde el Lujo y la Serenidad se
-                Encuentran con el Océano".</p>
-        </div>
 
-        <!-- Información de contacto -->
-        <div class="contact-info">
-            <h2>Información de Contacto</h2>
-            <p><strong>Dirección Física:</strong><br>
-                Hotel StarFish<br>
-                Costa Deslumbrante, Calle Marina #123, Ciudad Costera
-            </p>
-            <p><strong>Número de Teléfono Principal:</strong><br>
-                +123 456 7890
-            </p>
-            <p><strong>Correo Electrónico de Contacto:</strong><br>
-                <a href="mailto:contacto@hotelfish.com">contacto@hotelfish.com</a>
-            </p>
-            <p><strong>Horarios de Atención:</strong><br>
-                Lunes a Viernes: 8:00 AM - 8:00 PM<br>
-                Sábado y Domingo: 9:00 AM - 6:00 PM
-            </p>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63828.576386375884!2d-78.6847172783203!3d-0.9359282999999788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4610f5d33a74d%3A0x408aab614807127a!2sUniversidad%20de%20las%20Fuerzas%20Armadas%20ESPE%20Sede%20Latacunga%20(campus%20centro)!5e0!3m2!1ses!2sec!4v1719335786183!5m2!1ses!2sec"
-                    width="600" height="337.5" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <p class="mt-3"><strong>Redes Sociales:</strong><br>
-                <a href="#">Facebook</a><br>
-                <a href="#">Instagram</a><br>
-                <a href="#">Twitter</a>
-            </p>
-            <p><strong>Indicaciones y Transporte:</strong><br>
-                Ubicado a 30 minutos del Aeropuerto Internacional de Ciudad Costera. Transporte privado disponible bajo
-                solicitud.
-            </p>
-        </div>
+    <!-- Contenido de la página -->
+    <div class="banner-content">
+        <h1 class="mt-5" style="font-family: 'Bonheur Royale', cursive; font-size: 3rem;">Ofertas Exclusivas del Hotel
+            Starfish</h1>
+        <p style="font-family: 'Bonheur Royale', cursive; font-size: 1.5rem;">"Aprovecha nuestras promociones especiales
+            y disfruta de una estancia inolvidable a orillas del océano".</p>
     </div>
+
+    <div class="content container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="/ofertasimg/oferta1.png" class="card-img-top" alt="Oferta 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Oferta Especial</h5>
+                        <p class="card-text">Disfruta de nuestras ofertas especiales durante esta temporada. ¡No te lo
+                            pierdas!</p>
+                        <a href="#" class="btn btn-primary">Más información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="/ofertasimg/oferta1.png" class="card-img-top" alt="Oferta 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Oferta de Verano</h5>
+                        <p class="card-text">Aprovecha nuestras ofertas de verano con descuentos especiales. ¡Reserva
+                            ahora!</p>
+                        <a href="#" class="btn btn-primary">Más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <img src="/ofertasimg/oferta1.png" class="card-img-top" alt="Oferta 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Paquete Familiar</h5>
+                        <p class="card-text">Disfruta de una oferta especial para familias con actividades para todos.
+                            ¡No te lo pierdas!</p>
+                        <a href="#" class="btn btn-primary">Más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
 
     <!-- Footer -->
     <footer class="footer">
