@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboardadmin', function () {
-    return view('dashboard');
+Route::get('/login', function () {
+    return view('iniciosesion');
+});
+
+Route::get('/main', function () {
+    return view('principal');
 });
