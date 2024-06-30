@@ -15,15 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('nombres');
             $table->string('apellidos');
-            $table->string('direccion');
-            $table->string('telefono');
-            $table->dateTime('ingreso');
-            $table->dateTime('salida');
+            $table->string('direccion')->nullable();
+            $table->string('telefono')->nullable();
+            $table->date('ingreso');
+            $table->date('salida');
             $table->string('tipohabitacion');
-            $table->integer('nrohabitaciones');
-            $table->decimal('tarifa', 10, 2);
+            $table->unsignedTinyInteger('nrohabitaciones');
+            $table->decimal('tarifa', 8, 2)->nullable();
             $table->string('metodopago');
-            $table->boolean('ofertas')->default(false);
+            $table->string('ofertas')->nullable();
             $table->timestamps();
         });
     }

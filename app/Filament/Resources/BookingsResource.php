@@ -18,7 +18,7 @@ use Illuminate\Support\Number;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Checkbox;
 
 class BookingsResource extends Resource
@@ -32,37 +32,47 @@ class BookingsResource extends Resource
         return $form
             ->schema([
                 TextInput::make('nombres')->label('Nombres')->required(),
-                TextInput::make('apellidos')->label('Apellidos')->required(),
-                TextInput::make('direccion')->label('Dirección'),
-                TextInput::make('telefono')->label('Teléfono'),
-                DateTimePicker::make('ingreso')->label('Fecha de ingreso')->format('YYYY-MM-DD HH:mm:ss'),
-                DateTimePicker::make('salida')->label('Fecha de salida')->format('YYYY-MM-DD HH:mm:ss'),
-                Select::make('tipohabitacion')
-                    ->label('Tipo de habitación')
-                    ->options([
-                        'individual' => 'Individual',
-                        'doble' => 'Doble',
-                        'suite' => 'Suite'
-                    ])
-                    ->required(),
-                Select::make('nrohabitaciones')
-                    ->label('Número de habitaciones')
-                    ->options([
-                        '1' => '1',
-                        '2' => '2',
-                        '3' => '3'
-                    ])
-                    ->required(),
-                TextInput::make('tarifa')->label('Tarifa'),
-                TextInput::make('metodopago')->label('Método de pago'),
-                Select::make('ofertas')
-                    ->label('Ofertas')
-                    ->options([
-                        '10% en 10 noches' => '10% en 10 noches',
-                        '20% en mas de 10 noches' => '20% en mas de 10 noches',
-                        '2x1 Solo Alojamiento' => '2x1 Solo Alojamiento'
-                    ])
-            ]);
+            TextInput::make('apellidos')->label('Apellidos')->required(),
+            TextInput::make('direccion')->label('Dirección'),
+            TextInput::make('telefono')->label('Teléfono'),
+            DatePicker::make('ingreso')->label('Fecha de ingreso')->format('Y-m-d')->required(),
+            DatePicker::make('salida')->label('Fecha de salida')->format('Y-m-d')->required(),
+            Select::make('tipohabitacion')
+                ->label('Tipo de habitación')
+                ->options([
+                    'individual' => 'Individual',
+                    'doble' => 'Doble',
+                    'suite' => 'Suite'
+                ])
+                ->required(),
+            Select::make('nrohabitaciones')
+                ->label('Número de habitaciones')
+                ->options([
+                    '1' => '1',
+                    '2' => '2',
+                    '3' => '3',
+                    '4' => '4',
+                    '5' => '5',
+                ])
+                ->required(),
+            TextInput::make('tarifa')->label('Tarifa')->numeric()->step(0.01),
+            Select::make('metodopago')
+                ->label('Método de pago')
+                ->options([
+                    'Efectivo' => 'Efectivo',
+                    'Transferencia' => 'Transferencia',
+                    'Tarjetas de débito y crédito' => 'Tarjetas de débito y crédito'
+                ])
+                ->required(),
+            Select::make('ofertas')
+                ->label('Ofertas')
+                ->options([
+                    '10% en 10 noches' => '10% en 10 noches',
+                    '20% en más de 10 noches' => '20% en más de 10 noches',
+                    '2x1 Solo Alojamiento' => '2x1 Solo Alojamiento'
+                ])
+                ->nullable(),
+        ]);
     }
 
     public static function table(Table $table): Table
