@@ -22,7 +22,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('img/img1.jpg'); /* Ajusta la ruta si es necesario */
+            background-image: url('imagenes/img1.jpg'); /* Ajusta la ruta si es necesario */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -89,6 +89,68 @@
         button:hover {
             background-color: #4cae4c;
         }
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .footer .social-media {
+            margin-bottom: 20px;
+        }
+
+        .footer .social-media a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .footer .social-media img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer .links {
+            margin-bottom: 20px;
+        }
+
+        .footer .links a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .footer .address {
+            margin-bottom: 10px;
+        }
+
+        .footer .copyright {
+            font-size: 14px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .banner-content {
+            text-align: center;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .social-media i {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -110,6 +172,37 @@
             <button type="submit">Entrar</button>
         </form>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-media">
+                <span>Encuéntranos</span>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="links">
+                <a href="{{ url('/Inicio') }}">Inicio</a>
+                <span>|</span>
+                <a href="{{ route('reservas') }}">Reservas</a>
+                <span>|</span>
+                <a href="{{ url('/Ofertas') }}">Ofertas</a>
+                <span>|</span>
+                <a href="{{ url('/Conctactanos') }}">Contáctanos</a>
+            </div>
+            <div class="address">
+            </div>
+            <div class="copyright">
+                © 2022 Your Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
