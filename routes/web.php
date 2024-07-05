@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Filament\Http\Controllers\Auth\LogoutController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,4 +25,8 @@ Route::get('/ReservasForm', function () {
 
 Route::get('/Inicio', function () {
     return view('inicio');
+});
+
+Livewire::setUpdateRoute(function($handle) {
+    return Route::post('/ReservaHoteles/public/livewire/update', $handle);
 });

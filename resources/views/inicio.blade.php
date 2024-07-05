@@ -13,7 +13,23 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+
+        }
+
+        .fondo {
+            background-image: url('imagenes/img1.jpg');
+            /* Ajusta la ruta si es necesario */
             background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            color: #fff;
+        }
+
+        .fondo2 {
+            background-image: url('img/fondo2.avif');
+            /* Ajusta la ruta si es necesario */
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             margin: 0;
@@ -149,7 +165,8 @@
         }
 
         .carousel-item img {
-            height: 800px;
+            height: 400px;
+            width: 500px;
             object-fit: cover;
         }
 
@@ -299,101 +316,119 @@
     </nav>
 
     <!-- Contenido de la página -->
-    <div class="content" style="font-family: 'Poppins', sans-serif; font-size: 15px;">
-        <h1 class="text-center mt-5" style="font-family: 'Poppins', sans-serif; font-size: 60px; color: #000;">Hotel
-            Starfish</h1>
-    </div>
-    <div class="content" style="display: flex; justify-content: center; align-items: center; text-align: justify;">
-        <h1 class="mt-5" style="font-family: 'Poppins', sans-serif; font-size: 27px; color: #000; max-width: 970px;">
-            Bienvenido al Hotel StarFish, un oasis de tranquilidad y lujo situado en la costa más deslumbrante. Nuestro
-            hotel combina la elegancia moderna con la belleza natural del entorno marino, creando una experiencia
-            inolvidable para todos nuestros huéspedes. Con vistas panorámicas al océano, habitaciones exquisitamente
-            decoradas y una atención al cliente de primera clase, el Hotel StarFish es el lugar perfecto para unas
-            vacaciones de ensueño. Disfrute de nuestras exclusivas instalaciones, que incluyen un spa de lujo, piscinas
-            infinitas, y una selección de restaurantes gourmet que ofrecen lo mejor de la cocina local e internacional.
-            Ya sea que esté aquí para relajarse en nuestras playas privadas, explorar la vibrante vida marina o
-            simplemente disfrutar de un refugio sereno lejos del bullicio diario, el Hotel StarFish promete una estancia
-            llena de momentos mágicos y recuerdos inolvidables.
-        </h1>
-    </div>
+    <div class="fondo">
+        <div class="content" style="font-family: Bonheur Royale; font-size: 15px;">
+            <h1 class="text-center mt-5" style="font-family: 'Poppins', sans-serif; font-size: 60px; color: #000;">Hotel
+                Starfish</h1>
+        </div>
+        <div class="content" style="display: flex; justify-content: center; align-items: center; text-align: justify;">
+            <h1 class="mt-5" style="font-family: Bonheur Royale; font-size: 27px; color: #000; max-width: 970px;">
+                Bienvenido al Hotel StarFish, un oasis de tranquilidad y lujo situado en la costa más deslumbrante.
+                Nuestro
+                hotel combina la elegancia moderna con la belleza natural del entorno marino, creando una experiencia
+                inolvidable para todos nuestros huéspedes. Con vistas panorámicas al océano, habitaciones exquisitamente
+                decoradas y una atención al cliente de primera clase, el Hotel StarFish es el lugar perfecto para unas
+                vacaciones de ensueño. Disfrute de nuestras exclusivas instalaciones, que incluyen un spa de lujo,
+                piscinas
+                infinitas, y una selección de restaurantes gourmet que ofrecen lo mejor de la cocina local e
+                internacional.
+                Ya sea que esté aquí para relajarse en nuestras playas privadas, explorar la vibrante vida marina o
+                simplemente disfrutar de un refugio sereno lejos del bullicio diario, el Hotel StarFish promete una
+                estancia
+                llena de momentos mágicos y recuerdos inolvidables.
+            </h1>
+        </div>
 
-    <div class="container-fluid mt-4 mb-4">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="imagenes/imagenca1.jpg" class="d-block w-100" alt="Imagen 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagenes/imagenca2.jpg" class="d-block w-100" alt="Imagen 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagenes/imagenca3.jpg" class="d-block w-100" alt="Imagen 3">
+
+        <div class="container-fluid mt-4 mb-4">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagenes/imagenca1.jpg" class="d-block w-100" alt="Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/imagenca2.jpg" class="d-block w-100" alt="Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/imagenca3.jpg" class="d-block w-100" alt="Imagen 3">
+                    </div>
                 </div>
             </div>
-        </div>
-    </div><br><br>
+        </div><br><br>
+    </div>
 
     <div class="servicios">
         Servicios
-    </div><br><br>
-
-    <div class="container cards-container">
-        <div class="card">
-            <div class="card-title">Rooftop Bar</div>
-            <img src="imagenes/ROFBAR.jpg" alt="Rooftop Bar">
-            <div class="card-description">Disfruta de vistas espectaculares y cócteles únicos en nuestro vibrante
-                rooftop bar, el lugar perfecto para relajarte con amigos y disfrutar del ambiente nocturno.</div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">Restaurante </div>
-            <img src="imagenes/Bar.jpg" alt="Restaurante Gourmet">
-            <div class="card-description">Disfrute de una experiencia culinaria inolvidable en nuestro restaurante
-                gourmet, con platos que destacan lo mejor de la cocina local e internacional.</div>
-        </div>
-        <div class="card">
-            <div class="card-title">Habitación de Lujo</div>
-            <img src="imagenes/Habitaciones.jpg" alt="Habitación de Lujo">
-            <div class="card-description">Disfruta de una estancia de lujo en nuestras habitaciones, diseñadas para tu
-                confort con vistas impresionantes y servicios exclusivos.</div>
-        </div>
-        <div class="card">
-            <div class="card-title">SPA</div>
-            <img src="imagenes/SPA.jpg" alt="Spa de Lujo">
-            <div class="card-description">Sumérgete en la relajación total en nuestro exclusivo spa, donde podrás
-                disfrutar de una variedad de tratamientos rejuvenecedores y terapias de bienestar, todo en un ambiente
-                sereno y lujoso.</div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">Vistas Espectaculares</div>
-            <img src="imagenes/Playa.jpg" alt="Vistas Espectaculares">
-            <div class="card-description">Déjate maravillar por las vistas impresionantes que rodean nuestro hotel,
-                desde majestuosos paisajes marinos hasta panorámicas de montañas. Un verdadero deleite para los sentidos
-                que hará de tu estancia una experiencia inolvidable.</div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">Espacios Cómodos en la Playa</div>
-            <img src="imagenes/Espacios.jpg" alt="Espacios Cómodos en la Playa">
-            <div class="card-description">Relájate en nuestros exclusivos espacios frente al mar, equipados con cómodas
-                tumbonas y sombrillas. Disfruta del sol, la brisa marina y el sonido de las olas mientras te sumerges en
-                el confort y la tranquilidad de la playa.</div>
-        </div>
 
     </div>
-    <div class="feedback-form">
-        <h5>Send Feedback</h5>
-        <div class="form-group">
-            <textarea class="form-control" rows="3" placeholder="Your feedback..."></textarea>
+
+    <br><br>
+
+    <div class="fondo2">
+
+        <div class="container cards-container">
+            <div class="card">
+                <div class="card-title">Rooftop Bar</div>
+                <img src="imagenes/ROFBAR.jpg" alt="Rooftop Bar">
+                <div class="card-description">Disfruta de vistas espectaculares y cócteles únicos en nuestro vibrante
+                    rooftop bar, el lugar perfecto para relajarte con amigos y disfrutar del ambiente nocturno.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Restaurante </div>
+                <img src="imagenes/Bar.jpg" alt="Restaurante Gourmet">
+                <div class="card-description">Disfrute de una experiencia culinaria inolvidable en nuestro restaurante
+                    gourmet, con platos que destacan lo mejor de la cocina local e internacional.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Habitación de Lujo</div>
+                <img src="imagenes/Habitaciones.jpg" alt="Habitación de Lujo">
+                <div class="card-description">Disfruta de una estancia de lujo en nuestras habitaciones, diseñadas para
+                    tu
+                    confort con vistas impresionantes y servicios exclusivos.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">SPA</div>
+                <img src="imagenes/SPA.jpg" alt="Spa de Lujo">
+                <div class="card-description">Sumérgete en la relajación total en nuestro exclusivo spa, donde podrás
+                    disfrutar de una variedad de tratamientos rejuvenecedores y terapias de bienestar, todo en un
+                    ambiente
+                    sereno y lujoso.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Vistas Espectaculares</div>
+                <img src="imagenes/Playa.jpg" alt="Vistas Espectaculares">
+                <div class="card-description">Déjate maravillar por las vistas impresionantes que rodean nuestro hotel,
+                    desde majestuosos paisajes marinos hasta panorámicas de montañas. Un verdadero deleite para los
+                    sentidos
+                    que hará de tu estancia una experiencia inolvidable.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Espacios Cómodos en la Playa</div>
+                <img src="imagenes/Espacios.jpg" alt="Espacios Cómodos en la Playa">
+                <div class="card-description">Relájate en nuestros exclusivos espacios frente al mar, equipados con
+                    cómodas
+                    tumbonas y sombrillas. Disfruta del sol, la brisa marina y el sonido de las olas mientras te
+                    sumerges en
+                    el confort y la tranquilidad de la playa.</div>
+            </div>
+
         </div>
-        <div class="form-group">
-            <button class="btn btn-smiley"><i class="far fa-smile"></i></button>
-            <button class="btn btn-sad"><i class="far fa-frown"></i></button>
-            <button class="btn btn-feedback float-right"><i class="fas fa-paper-plane"></i></button>
+
+        <div class="feedback-form">
+            <h5>Send Feedback</h5>
+            <div class="form-group">
+                <textarea class="form-control" rows="3" placeholder="Your feedback..."></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-smiley"><i class="far fa-smile"></i></button>
+                <button class="btn btn-sad"><i class="far fa-frown"></i></button>
+                <button class="btn btn-feedback float-right"><i class="fas fa-paper-plane"></i></button>
+            </div>
         </div>
     </div>
-
     <footer class="footer">
         <div class="container">
             <div class="social-media">
