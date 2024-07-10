@@ -19,7 +19,7 @@
             <a href="#">Reserva</a>
             <a href="#">Contactos</a>
             <div class="buttons">
-                <button>Registro</button>
+                <button>Registro de usuarios</button>
                 <button>Inicio de Sesión</button>
             </div>
         </div>
