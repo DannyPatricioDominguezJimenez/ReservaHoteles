@@ -110,7 +110,7 @@
                         <a class="nav-link" href="{{ url('/Inicio') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('reservas') }}">Reservas</a>
+                        <a class="nav-link" href="#">Reservas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ url('/Ofertas') }}">Ofertas</a>
@@ -176,7 +176,7 @@
             <div class="links">
                 <a href="{{ url('/Inicio') }}">Inicio</a>
                 <span>|</span>
-                <a href="{{ route('reservas') }}">Reservas</a>
+                <a href="#">Reservas</a>
                 <span>|</span>
                 <a href="{{ url('/Ofertas') }}">Ofertas</a>
                 <span>|</span>
