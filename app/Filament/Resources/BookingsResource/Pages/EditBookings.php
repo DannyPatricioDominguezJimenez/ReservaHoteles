@@ -5,6 +5,7 @@ namespace App\Filament\Resources\BookingsResource\Pages;
 use App\Filament\Resources\BookingsResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Notification;
 
 class EditBookings extends EditRecord
 {
@@ -15,5 +16,10 @@ class EditBookings extends EditRecord
         return [
             Actions\DeleteAction::make(),
         ];
+    }
+
+    protected function getSavedNotificationTitle(): string|null
+    {
+        return 'Reserva Actualizada';
     }
 }
