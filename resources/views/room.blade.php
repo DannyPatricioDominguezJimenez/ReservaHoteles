@@ -13,7 +13,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('imagenes/Fondo.jpg');
+            background-image: url('imagenes/froom.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -139,12 +139,19 @@
                         <input type="text" class="form-control" id="room-name" placeholder="Ingrese el nombre de la habitación">
                     </div>
                     <div class="mb-3">
-                        <label for="room-description" class="form-label">Descripción de la Habitación</label>
-                        <textarea class="form-control" id="room-description" rows="3" placeholder="Ingrese la descripción de la habitación"></textarea>
+                        <label for="room-rate" class="form-label">Tarifa</label>
+                        <input type="number" class="form-control" id="room-rate" placeholder="Ingrese el precio por noche">
                     </div>
                     <div class="mb-3">
-                        <label for="room-price" class="form-label">Precio por Noche</label>
-                        <input type="number" class="form-control" id="room-price" placeholder="Ingrese el precio por noche">
+                        <label for="room-status" class="form-label">Estado</label>
+                        <select class="form-control" id="room-status">
+                            <option value="disponible">Disponible</option>
+                            <option value="no disponible">No Disponible</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="room-description" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="room-description" rows="3" placeholder="Ingrese la descripción de la habitación"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="room-image" class="form-label">Imagen de la Habitación</label>
@@ -194,19 +201,21 @@
     <script>
         function addRoom() {
             const roomName = document.getElementById('room-name').value;
+            const roomRate = document.getElementById('room-rate').value;
+            const roomStatus = document.getElementById('room-status').value;
             const roomDescription = document.getElementById('room-description').value;
-            const roomPrice = document.getElementById('room-price').value;
             const roomImage = document.getElementById('room-image').files[0];
 
-            if(roomName && roomDescription && roomPrice && roomImage) {
+            if(roomName && roomRate && roomStatus && roomDescription && roomImage) {
                 const roomList = document.getElementById('room-list');
                 const listItem = document.createElement('li');
                 listItem.className = 'list-group-item';
                 listItem.innerHTML = `
-                    <strong>${roomName}</strong><br>
-                    ${roomDescription}<br>
-                    Precio: $${roomPrice}<br>
-                    <img src="${URL.createObjectURL(roomImage)}" alt="${roomName}" style="width: 100px;">
+                    <strong>Nombre de la Habitación:</strong> ${roomName}<br>
+                    <strong>Tarifa:</strong> $${roomRate}<br>
+                    <strong>Estado:</strong> ${roomStatus}<br>
+                    <strong>Descripción:</strong> ${roomDescription}<br>
+                    <strong>Imagen:</strong><br> <img src="${URL.createObjectURL(roomImage)}" alt="${roomName}" style="width: 100px;">
                 `;
                 roomList.appendChild(listItem);
 
