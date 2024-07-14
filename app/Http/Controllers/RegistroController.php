@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Huesped;
+use App\Models\Guest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\RegistroController;
+//use App\Http\Controllers\RegistroController;
 
 class RegistroController extends Controller
 {
@@ -17,12 +18,12 @@ class RegistroController extends Controller
             'apellido' => 'required|string|max:255',
             'cedula' => 'required|string|max:20',
             'fechanacimiento' => 'required|date',
-            'email' => 'required|string|email|max:255|unique:huespedes',
+            'email' => 'required|string|email|max:255|unique:guests',
             'password' => 'required|string|min:8',
         ]);
 
         // Crear un nuevo huésped en la base de datos
-        $huesped = new Huesped();
+        $huesped = new Guest();
         $huesped->nombre = $request->nombre;
         $huesped->apellido = $request->apellido;
         $huesped->cedula = $request->cedula;

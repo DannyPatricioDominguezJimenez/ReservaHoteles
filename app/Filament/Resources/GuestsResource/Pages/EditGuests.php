@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\BookingsResource\Pages;
+namespace App\Filament\Resources\GuestsResource\Pages;
 
-use App\Filament\Resources\BookingsResource;
+use App\Filament\Resources\GuestsResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Notification;
 
-class EditBookings extends EditRecord
+class EditGuests extends EditRecord
 {
-    protected static string $resource = BookingsResource::class;
+    protected static string $resource = GuestsResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -20,7 +19,7 @@ class EditBookings extends EditRecord
 
     protected function getSavedNotificationTitle(): string|null
     {
-        return 'Reserva Actualizada';
+        return 'Huesped Actualizado';
     }
 
     protected function getRedirectUrl(): string

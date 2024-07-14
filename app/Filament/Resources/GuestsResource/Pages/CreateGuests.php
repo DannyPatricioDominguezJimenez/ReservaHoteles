@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Filament\Resources\BookingsResource\Pages;
+namespace App\Filament\Resources\GuestsResource\Pages;
 
-use App\Filament\Resources\BookingsResource;
+use App\Filament\Resources\GuestsResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
-class CreateBookings extends CreateRecord
+class CreateGuests extends CreateRecord
 {
-    protected static string $resource = BookingsResource::class;
+    protected static string $resource = GuestsResource::class;
 
     protected function getCreatedNotificationTitle(): string|null
     {
-        return 'Reserva Creada';
+        return 'Huesped Creado';
     }
-
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
     }
+
 }

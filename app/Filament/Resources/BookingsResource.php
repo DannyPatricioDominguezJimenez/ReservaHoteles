@@ -43,7 +43,7 @@ class BookingsResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('nombres')->label('Nombres')->required(),
+            TextInput::make('nombres')->label('Nombres')->required(),
             TextInput::make('apellidos')->label('Apellidos')->required(),
             TextInput::make('direccion')->label('Dirección'),
             TextInput::make('telefono')->label('Teléfono'),
@@ -67,7 +67,7 @@ class BookingsResource extends Resource
                     '5' => '5',
                 ])
                 ->required(),
-            TextInput::make('tarifa')->label('Tarifa')->numeric()->step(0.01),
+            TextInput::make('tarifa')->label('Tarifa')->numeric()->step(0.01)->prefix('$'),
             Select::make('metodopago')
                 ->label('Método de pago')
                 ->options([
@@ -93,7 +93,7 @@ class BookingsResource extends Resource
             ->columns([
                 TextColumn::make('id')->label('ID')->sortable(),
                 TextColumn::make('nombres')->label('Nombres'),
-                TextColumn::make('apellidos')->label('Apellidos'),
+                TextColumn::make('apellidos')->label('Apellidos')->searchable(),
                 TextColumn::make('direccion')->label('Dirección'),
                 TextColumn::make('telefono')->label('Teléfono'),
                 TextColumn::make('ingreso')->label('Fecha de ingreso')->date(),

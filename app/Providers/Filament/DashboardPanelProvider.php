@@ -31,7 +31,7 @@ class DashboardPanelProvider extends PanelProvider
             ->darkMode(false)
             ->favicon(asset('img/logo.jpeg'))
             ->colors([
-                'primary' => '#be123c',
+                'primary' => '#4c1d95',
                 'count' => Color::Green,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

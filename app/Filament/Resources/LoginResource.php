@@ -48,7 +48,7 @@ class LoginResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('usuario')->searchable(),
+                TextColumn::make('usuario')->searchable()->searchable(),
                 TextColumn::make('contraseña')->searchable()
             ])
             ->filters([
