@@ -2,10 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use Filament\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\RegistroController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/Room', function (){
+    return view('room');
+});
+
 Route::get('/Conctactanos', function () {
     return view('prueba');
 });
@@ -26,6 +32,14 @@ Route::get('/ReservasForm', function () {
 Route::get('/Inicio', function () {
     return view('inicio');
 });
+Route::get('/registro', function () {
+    return view('registro');
+});
+
+Route::post('/registro', [RegistroController::class, 'store'])->name('registro.store');
+
+
+Route::post('/InicioSesion', [InicioSesionController::class, 'index'])->name('inicio.sesion');
 
 Livewire::setUpdateRoute(function($handle) {
     return Route::post('/ReservaHoteles/public/livewire/update', $handle);
