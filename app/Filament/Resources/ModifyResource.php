@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ModifyResource\Pages;
 use App\Filament\Resources\ModifyResource\RelationManagers;
-use App\Models\Modify;
+use App\Models\Modificaciones;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -20,7 +20,7 @@ use Filament\Tables\Columns\ImageColumn;
 
 class ModifyResource extends Resource
 {
-    protected static ?string $model = Modify::class;
+    protected static ?string $model = Modificaciones::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
     protected static ?string $navigationGroup = 'Gestion Habitaciones';
