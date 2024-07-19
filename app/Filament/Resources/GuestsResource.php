@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\GuestsResource\Pages;
 use App\Filament\Resources\GuestsResource\RelationManagers;
-use App\Models\Guest;
+use App\Models\Huespedes;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class GuestsResource extends Resource
 {
-    protected static ?string $model = Guest::class;
+    protected static ?string $model = Huespedes::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
     protected static ?string $navigationGroup = 'Cruds';

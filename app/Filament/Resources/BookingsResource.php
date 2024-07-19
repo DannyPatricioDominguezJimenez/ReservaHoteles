@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BookingsResource\Pages;
 use App\Filament\Resources\BookingsResource\RelationManagers;
-use App\Models\Bookings;
+use App\Models\Reservas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,7 +23,7 @@ use Filament\Forms\Components\Checkbox;
 
 class BookingsResource extends Resource
 {
-    protected static ?string $model = Bookings::class;
+    protected static ?string $model = Reservas::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
     protected static ?string $navigationGroup = 'Cruds';
