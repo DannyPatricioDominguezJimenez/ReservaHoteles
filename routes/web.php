@@ -15,6 +15,9 @@ Route::get('/Room', function (){
 Route::get('/Conctactanos', function () {
     return view('prueba');
 });
+Route::get('/Menu', function () {
+    return view('menu');
+});
 Route::get('/InicioSesion', function () {
     return view('iniciosesion');
 });

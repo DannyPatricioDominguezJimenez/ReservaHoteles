@@ -1,40 +1,74 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Starfish</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
     <style>
-        body {
-            padding-top: 56px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            color: #000;
-        }
-
-        .navbar {
+        .footer {
             background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
         }
 
-        .navbar-brand img {
-            height: 60px;
+        .footer .social-media {
+            margin-bottom: 20px;
         }
 
-        .navbar-nav .nav-link {
-            color: #fff !important;
+        .footer .social-media a {
+            margin: 0 10px;
+            display: inline-block;
         }
 
-        .navbar-nav .nav-link.active {
-            font-weight: bold;
+        .footer .social-media img {
+            width: 40px;
+            height: 40px;
         }
 
-        .navbar-nav .nav-link:hover {
-            color: #ccc !important;
+        .footer .links {
+            margin-bottom: 20px;
+        }
+
+        .footer .links a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .footer .address {
+            margin-bottom: 10px;
+        }
+
+        .footer .copyright {
+            font-size: 14px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .banner-content {
+            text-align: center;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .social-media i {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #fff;
         }
 
         .btn-outline-light {
@@ -53,7 +87,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            
+
             background-size: cover;
             background-position: center;
         }
@@ -112,86 +146,70 @@
         .form-content button:hover {
             background-color: #0056b3;
         }
-
-        .footer {
-            background-color: #000;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            width: 100%;
-        }
-
-        .footer .social-media {
-            margin-bottom: 20px;
-        }
-
-        .footer .social-media a {
-            margin: 0 10px;
-            display: inline-block;
-        }
-
-        .footer .social-media img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .footer .links {
-            margin-bottom: 20px;
-        }
-
-        .footer .links a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        .footer .address {
-            margin-bottom: 10px;
-        }
-
-        .footer .copyright {
-            font-size: 14px;
-        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="imagenes/logo.jpg" alt="Logo" style="vertical-align: middle;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url('/Inicio') }}">Inicio</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('reservas') }}">Reservas</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url('/Ofertas') }}">Ofertas</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url('/Conctactanos') }}">Contáctanos</a>
-    </li>
-</ul>
+    <div class="bg-gold-400 border-b-2 shadow-md border-gray-100 pb-5">
+        <div class="max-w-7xl mx-auto my-5 px-4 sm:px-6">
+            <div
+                class="flex flex-col-reverse md:flex-row min-w-full py-6 space-y-8 justify-center md:justify-between md:space-x-10">
+                <input id="search"
+                    class="flex leading-none focus:outline-none border-b-2 hover:border-b-3 border-red-800 w-5/6 mt-12 mx-auto md:w-1/4 md:mt-0 md:mx-0"
+                    type="text" placeholder="Search...">
+                <a class="flex-1 md:self-start" href="#">
+                    <div class="flex justify-center">
+                        <div class="flex justify-center items-center">
+                            <span
+                                class="pt-1 mx-3 whitespace-nowrap text-4xl italic font-light text-red-700 hover:text-gray-900">Hotel
+                                Starfish</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="flex justify-around">
+                    <div class="flex justify-end">
 
-            </div>
-            <div class="d-flex">
-                <button class="btn btn-outline-light me-2" type="button"
-                    onclick="window.location.href='{{ url('/InicioSesion') }}'">Iniciar Sesión</button>
-                <button class="btn btn-outline-light" type="button">Registrarse</button>
+                        <a class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
+                            <img class="m-1 inline-block h-5 w-5 rounded-full ring-2 ring-white"
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                                alt="">
+                            <button class="btn btn-outline-light me-2" type="button"
+                                onclick="window.location.href='{{ url('/InicioSesion') }}'">Iniciar Sesión</button>
+                        </a>
+                        <a class="mx-4 whitespace-nowrap text-base text-red-800 hover:text-gray-900" href="#">
+                            <button class="btn btn-outline-light" type="button">Registrarse</button>
+                        </a>
+                    </div>
+                    <div class="-my-2 md:hidden">
+                        <button type="button"
+                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-900 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                            aria-expanded="false">
+                            <span class="sr-only">Open menu</span>
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav><br>
-        <br><br><br>
-    <!-- Contenido de la página -->
-    
+        <nav id="bar" class="flex justify-center">
+            <div class="flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4 text-center text-gray-500">
+                <a class="nav-link active" aria-current="page" href="{{ url('/Inicio') }}">Inicio</a>
+
+                <a href="{{ route('reservas') }}" class="mx-8 hover:text-red-900">Reservas</a>
+                <a href="{{ url('/Ofertas') }}" class="mx-8 hover:text-red-900">Ofertas</a>
+                <a href="{{ url('/Conctactanos') }}" class="mx-8 hover:text-red-900">Contactanos</a>
+            </div>
+        </nav>
+    </div><br><br>
+    <h2 class="font-bold text-center text-4xl text-slate-700 font-display">
+    Formulario de Reserva
+</h2><br>
+
+
     <div class="content"><br><br>
         <div class="form-container">
             <img src="imagenes/imgreservas.jpg" alt="Hotel Image">
@@ -239,7 +257,7 @@
         </div>
     </div><br>
 
-    <!-- Footer -->
+
     <footer class="footer">
         <div class="container">
             <div class="social-media">
@@ -250,7 +268,7 @@
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="links">
-            <a href="{{ url('/Inicio') }}">Inicio</a>
+                <a href="{{ url('/Inicio') }}">Inicio</a>
                 <span>|</span>
                 <a href="{{ route('reservas') }}">Reservas</a>
                 <span>|</span>
@@ -266,7 +284,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
