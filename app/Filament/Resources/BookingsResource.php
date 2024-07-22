@@ -76,14 +76,14 @@ class BookingsResource extends Resource
                     'Tarjetas de débito y crédito' => 'Tarjetas de débito y crédito'
                 ])
                 ->required(),
-            Select::make('ofertas')
+            /*Select::make('ofertas')
                 ->label('Ofertas')
                 ->options([
                     '10% en 10 noches' => '10% en 10 noches',
                     '20% en más de 10 noches' => '20% en más de 10 noches',
                     '2x1 Solo Alojamiento' => '2x1 Solo Alojamiento'
                 ])
-                ->nullable(),
+                ->nullable(),*/
         ]);
     }
 
@@ -91,7 +91,7 @@ class BookingsResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->label('ID')->sortable(),
+                //TextColumn::make('id')->label('ID')->sortable(),
                 TextColumn::make('nombres')->label('Nombres'),
                 TextColumn::make('apellidos')->label('Apellidos')->searchable(),
                 TextColumn::make('direccion')->label('Dirección'),
@@ -102,7 +102,7 @@ class BookingsResource extends Resource
                 TextColumn::make('nrohabitaciones')->label('Número de habitaciones'),
                 TextColumn::make('tarifa')->label('Tarifa'),
                 TextColumn::make('metodopago')->label('Método de pago'),
-                TextColumn::make('ofertas')->label('Ofertas')
+               // TextColumn::make('ofertas')->label('Ofertas')
             ])
             ->filters([
                 //

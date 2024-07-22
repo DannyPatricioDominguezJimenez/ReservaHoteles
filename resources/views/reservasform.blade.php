@@ -206,8 +206,8 @@
         </nav>
     </div><br><br>
     <h2 class="font-bold text-center text-4xl text-slate-700 font-display">
-    Formulario de Reserva
-</h2><br>
+        Formulario de Reserva
+    </h2><br>
 
 
     <div class="content"><br><br>
@@ -215,42 +215,53 @@
             <img src="imagenes/imgreservas.jpg" alt="Hotel Image">
             <div class="form-content">
                 <h2>Datos Personales</h2>
-                <form>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido" required>
+                <form action="{{ url('/reservar') }}" method="POST">
+                    @csrf
+                    <label for="nombres">Nombre:</label>
+                    <input type="text" id="nombres" name="nombres" required>
+
+                    <label for="apellidos">Apellido:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+
                     <label for="direccion">Dirección:</label>
                     <input type="text" id="direccion" name="direccion" required>
+
                     <label for="telefono">Teléfono:</label>
                     <input type="tel" id="telefono" name="telefono" required>
+
                     <label for="ingreso">Ingreso:</label>
                     <input type="date" id="ingreso" name="ingreso" required>
+
                     <label for="salida">Salida:</label>
                     <input type="date" id="salida" name="salida" required>
-                    <label for="tipo_habitacion">Tipo Habitación:</label>
-                    <select id="tipo_habitacion" name="tipo_habitacion" required>
+
+                    <label for="tipohabitacion">Tipo Habitación:</label>
+                    <select id="tipohabitacion" name="tipohabitacion" required>
                         <option value="" disabled selected>Seleccione el tipo de habitación</option>
                         <option value="simple">Simple</option>
                         <option value="doble">Doble</option>
                         <option value="suite">Suite</option>
                     </select>
-                    <label for="num_habitaciones">Nro. Habitaciones:</label>
-                    <select id="num_habitaciones" name="num_habitaciones" required>
+
+                    <label for="nrohabitaciones">Nro. Habitaciones:</label>
+                    <select id="nrohabitaciones" name="nrohabitaciones" required>
                         <option value="" disabled selected>Seleccione el número de habitaciones</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
+
                     <label for="tarifa">Tarifa:</label>
                     <input type="text" id="tarifa" name="tarifa" required>
-                    <label for="metodo_pago">Método de Pago:</label>
-                    <select id="metodo_pago" name="metodo_pago" required>
+
+                    <label for="metodopago">Método de Pago:</label>
+                    <select id="metodopago" name="metodopago" required>
                         <option value="" disabled selected>Seleccione el método de pago</option>
                         <option value="tarjeta">Tarjeta de Crédito</option>
                         <option value="paypal">PayPal</option>
                         <option value="transferencia">Transferencia Bancaria</option>
                     </select>
+
                     <button type="submit">Reservar</button>
                 </form>
             </div>

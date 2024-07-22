@@ -29,7 +29,7 @@ class RegistroController extends Controller
         $huesped->cedula = $request->cedula;
         $huesped->fechanacimiento = $request->fechanacimiento;
         $huesped->email = $request->email;
-        $huesped->password = Hash::make($request->password); // Hashear la contraseña antes de guardarla
+        $huesped->password = $request->password; // Hashear la contraseña antes de guardarla
 
         $huesped->save();
 
