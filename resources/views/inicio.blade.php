@@ -19,6 +19,7 @@
             margin: 0;
             color: #fff;
         }
+        
 
         .navbar {
             background-color: #000;
