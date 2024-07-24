@@ -104,7 +104,8 @@
                                 onclick="window.location.href='{{ url('/InicioSesion') }}'">Iniciar Sesión</button>
                         </a>
                         <a class="mx-4 whitespace-nowrap text-base text-red-800 hover:text-gray-900" href="#">
-                            <button class="btn btn-outline-light" type="button">Registrarse</button>
+                            <button class="btn btn-outline-light" type="button"
+                                onclick="window.location.href='{{url('/registro')}}'">Registrarse</button>
                         </a>
                     </div>
                     <div class="-my-2 md:hidden">
