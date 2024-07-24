@@ -3,14 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicio');
+})->name('inicio');
 Route::get('/Conctactanos', function () {
     return view('prueba');
 });
-Route::get('/Menu', function () {
-    return view('menu');
-});
+
 Route::get('/InicioSesion', function () {
     return view('iniciosesion');
 });
@@ -25,9 +23,7 @@ Route::get('/ReservasForm', function () {
     return view('reservasform');
 })->name('reservasform');
 
-Route::get('/Inicio', function () {
-    return view('inicio');
-});
+
 Route::get('/registro', function () {
     return view('registro');
 });

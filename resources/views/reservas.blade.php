@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <title>Document</title>
+    <title>Reservas</title>
     <style>
         .footer {
             background-color: #000;
@@ -113,7 +113,7 @@
                 class="flex flex-col-reverse md:flex-row min-w-full py-6 space-y-8 justify-center md:justify-between md:space-x-10">
                 <input id="search"
                     class="flex leading-none focus:outline-none border-b-2 hover:border-b-3 border-red-800 w-5/6 mt-12 mx-auto md:w-1/4 md:mt-0 md:mx-0"
-                    type="text" placeholder="Search...">
+                    type="text" >
                 <a class="flex-1 md:self-start" href="#">
                     <div class="flex justify-center">
                         <div class="flex justify-center items-center">
@@ -134,7 +134,8 @@
                                 onclick="window.location.href='{{ url('/InicioSesion') }}'">Iniciar Sesión</button>
                         </a>
                         <a class="mx-4 whitespace-nowrap text-base text-red-800 hover:text-gray-900" href="#">
-                            <button class="btn btn-outline-light" type="button">Registrarse</button>
+                        <button class="btn btn-outline-light" type="button"
+                        onclick="window.location.href='{{url('/registro')}}'">Registrarse</button>
                         </a>
                     </div>
                     <div class="-my-2 md:hidden">
@@ -154,7 +155,7 @@
         </div>
         <nav id="bar" class="flex justify-center">
             <div class="flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4 text-center text-gray-500">
-                <a class="nav-link active" aria-current="page" href="{{ url('/Inicio') }}">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
 
                 <a href="{{ route('reservas') }}" class="mx-8 hover:text-red-900">Reservas</a>
                 <a href="{{ url('/Ofertas') }}" class="mx-8 hover:text-red-900">Ofertas</a>
@@ -1028,7 +1029,7 @@
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="links">
-                <a href="{{ url('/Inicio') }}">Inicio</a>
+            <a href="{{ route('inicio') }}">Inicio</a>
                 <span>|</span>
                 <a href="{{ route('reservas') }}">Reservas</a>
                 <span>|</span>
