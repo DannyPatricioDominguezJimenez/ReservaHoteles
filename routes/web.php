@@ -6,19 +6,12 @@ use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ReservaController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/Room', function (){
-    return view('room');
-});
-
+    return view('inicio');
+})->name('inicio');
 Route::get('/Conctactanos', function () {
     return view('prueba');
 });
-Route::get('/Menu', function () {
-    return view('menu');
-});
+
 Route::get('/InicioSesion', function () {
     return view('iniciosesion');
 });
@@ -33,9 +26,7 @@ Route::get('/ReservasForm', function () {
     return view('reservasform');
 })->name('reservasform');
 
-Route::get('/Inicio', function () {
-    return view('inicio');
-});
+
 Route::get('/registro', function () {
     return view('registro');
 });
