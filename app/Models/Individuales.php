@@ -12,7 +12,7 @@ class Individuales extends Model
         'imagen',
         'tipohabitacion',
         'tarifa',
-        'Estado',
-        'Descripcion',
+        'estado',
+        'descripcion',
     ];
 }

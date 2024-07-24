@@ -276,36 +276,36 @@
 
                     <!-- Habitación Suite -->
                     <p class="text-center mt-8 font-medium text-slate-500">Hotel Starfish</p>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                         @foreach($suites as $suite)
                             <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="{{ asset('storage/' . $suite->imagen) }}" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="{{ route('reservasform') }}" class="hover:underline">
-                                    {{ $suite->tipohabitacion }}
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> ${{ $suite->tarifa }}</p>
-                                <p><strong>Estado:</strong> {{ $suite->Estado }}</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    @foreach(explode(',', $suite->Descripcion) as $descripcion)
-                                        <li>{{ $descripcion }}</li>
-                                    @endforeach
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
+                                <img src="{{ asset('storage/' . $suite->imagen) }}" class="object-cover h-52 w-full"
+                                    alt="Habitación Suite">
+                                <div class="p-6">
+                                    <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
+                                        <a href="{{ route('reservasform') }}" class="hover:underline">
+                                            {{ $suite->tipohabitacion }}
+                                        </a>
+                                    </h3>
+                                    <p><strong>Tarifa:</strong> ${{ $suite->tarifa }}</p>
+                                    <p><strong>Estado:</strong> {{ $suite->Estado }}</p>
+                                    <ul class="list-disc list-inside mb-4">
+                                        @foreach(explode(',', $suite->Descripcion) as $descripcion)
+                                            <li>{{ $descripcion }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="{{ route('reservasform') }}"
+                                            class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+                                            Reservar
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         @endforeach
                     </div>
-                    
+
                     <h2 class="mt-20 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-white shadow rounded-lg overflow-hidden">
@@ -395,34 +395,33 @@
 
                     <p class="text-center mt-4 font-medium text-slate-500">Hotel Starfish</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-20 justify-center">
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/descarga.jpeg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="">
-                                        Habitación Individual
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $56</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 1</li>
-                                    <li>1 cama tamaño individual</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
+                        @foreach($individuales as $individual)
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <img src="{{ asset('storage/' . $individual->imagen) }}" class="object-cover h-52 w-full"
+                                    alt="Habitación Suite">
+                                <div class="p-6">
+                                    <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
+                                        <a href="">
+                                            {{ $individual->tipohabitacion }}
+                                        </a>
+                                    </h3>
+                                    <p><strong>Tarifa:</strong> ${{ $individual->tarifa }}</p>
+                                    <p><strong>Estado:</strong> {{ $individual->estado }}</p>
+                                    <ul class="list-disc list-inside mb-4">
+                                        @foreach(explode(',', $individual->descripcion) as $descripcion)
+                                            <li>{{ $descripcion }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="{{ route('reservasform') }}"
+                                            class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+                                            Reservar
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
+                        @endforeach
+                        <!--
                         <div class="bg-white shadow rounded-lg overflow-hidden">
                             <img src="habitacionesimg/Suite2.jpg" class="object-cover h-52 w-full"
                                 alt="Habitación Suite">
@@ -530,8 +529,9 @@
                                 </div>
                             </div>
                         </div>
-
+                        -->
                     </div>
+
                     <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-white shadow rounded-lg overflow-hidden">

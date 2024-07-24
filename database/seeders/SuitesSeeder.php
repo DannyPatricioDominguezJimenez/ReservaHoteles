@@ -10,7 +10,7 @@ class SuitesSeeder extends Seeder
     public function run()
     {
         Suites::create([
-            'imagen' => 'habitacionesimg/habitacion1.jpeg',
+            'imagen' => 'habitaciones/01J3JTN5N382W4PKWD39KVPFQ9.jpeg',
             'tipohabitacion' => 'Habitación Suite 1',
             'tarifa' => '56',
             'Estado' => 'Disponible',
@@ -18,7 +18,7 @@ class SuitesSeeder extends Seeder
         ]);
 
         Suites::create([
-            'imagen' => 'habitacionesimg/habitacion2.jpeg',
+            'imagen' => 'habitaciones/01J3JTP33RV1SWG85WYVX40K3S.jpeg',
             'tipohabitacion' => 'Habitación Suite 2',
             'tarifa' => '100',
             'Estado' => 'Disponible',
@@ -26,7 +26,7 @@ class SuitesSeeder extends Seeder
         ]);
 
         Suites::create([
-            'imagen' => 'habitacionesimg/habitacion3.jpeg',
+            'imagen' => 'habitaciones/01J3JTQ0ZNV2N4MJRZ7JQPGC13.jpeg',
             'tipohabitacion' => 'Habitación Suite 3',
             'tarifa' => '90',
             'Estado' => 'Disponible',

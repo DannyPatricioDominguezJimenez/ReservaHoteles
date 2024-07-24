@@ -43,11 +43,11 @@ class IndividualesResource extends Resource
                 ->directory('habitaciones'),
                 TextInput::make('tipohabitacion')->label('Tipo de Habitación')->required(),
                 TextInput::make('tarifa')->label('Tarifa')->numeric()->required(),
-                Select::make('Estado')->label('Estado')->options([
-                    'activo' => 'Activo',
-                    'inactivo' => 'Inactivo',
+                Select::make('estado')->label('Estado')->options([
+                    'Disponible' => 'Disponible',
+                    'Ocupada' => 'Ocupada',
                 ])->required(),
-                TextInput::make('Descripcion')->label('Descripción')->required(),
+                TextInput::make('descripcion')->label('Descripción')->required(),
             ]);
     }
 
@@ -58,8 +58,8 @@ class IndividualesResource extends Resource
                 ImageColumn::make('imagen'),
                 TextColumn::make('tipohabitacion')->label('Tipo de Habitación'),
                 TextColumn::make('tarifa')->label('Tarifa')->money('USD'),
-                TextColumn::make('Estado')->label('Estado'),
-                TextColumn::make('Descripcion')->label('Descripción'),
+                TextColumn::make('estado')->label('Estado'),
+                TextColumn::make('descripcion')->label('Descripción'),
             ])
             ->filters([
                 //

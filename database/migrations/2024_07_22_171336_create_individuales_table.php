@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('imagen');
             $table->string('tipohabitacion');
             $table->string('tarifa');
-            $table->string('Estado');
-            $table->string('Descripcion');
+            $table->string('estado');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
