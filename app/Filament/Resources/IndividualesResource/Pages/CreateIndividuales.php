@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ModifyResource\Pages;
+namespace App\Filament\Resources\IndividualesResource\Pages;
 
-use App\Filament\Resources\ModifyResource;
+use App\Filament\Resources\IndividualesResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
-class CreateModify extends CreateRecord
+class CreateIndividuales extends CreateRecord
 {
-    protected static string $resource = ModifyResource::class;
+    protected static string $resource = IndividualesResource::class;
     protected function getCreatedNotificationTitle(): string|null
     {
         return 'Habitacion Creada';

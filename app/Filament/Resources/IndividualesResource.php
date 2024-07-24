@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ModifyResource\Pages;
-use App\Filament\Resources\ModifyResource\RelationManagers;
-use App\Models\Modificaciones;
+use App\Filament\Resources\IndividualesResource\Pages;
+use App\Filament\Resources\IndividualesResource\RelationManagers;
+use App\Models\Individuales;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -18,9 +18,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 
-class ModifyResource extends Resource
+class IndividualesResource extends Resource
 {
-    protected static ?string $model = Modificaciones::class;
+    protected static ?string $model = Individuales::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
     protected static ?string $navigationGroup = 'Gestion Habitaciones';
@@ -33,6 +33,7 @@ class ModifyResource extends Resource
     {
         return 'count';
     }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -67,7 +68,7 @@ class ModifyResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                    ->successNotificationTitle('Habitacion Eliminado'),
+                    ->successNotificationTitle('Habitacion Eliminada'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -86,9 +87,9 @@ class ModifyResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListModifies::route('/'),
-            'create' => Pages\CreateModify::route('/create'),
-            'edit' => Pages\EditModify::route('/{record}/edit'),
+            'index' => Pages\ListIndividuales::route('/'),
+            'create' => Pages\CreateIndividuales::route('/create'),
+            'edit' => Pages\EditIndividuales::route('/{record}/edit'),
         ];
     }
 }
