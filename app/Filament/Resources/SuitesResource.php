@@ -40,12 +40,14 @@ class SuitesResource extends Resource
             ->schema([
                 FileUpload::make('imagen')
                 ->image()
-                ->directory('habitaciones'),
+                ->disk('public')
+                ->directory('habitaciones')
+                -> required(),
                 TextInput::make('tipohabitacion')->label('Tipo de Habitación')->required(),
                 TextInput::make('tarifa')->label('Tarifa')->numeric()->required(),
                 Select::make('Estado')->label('Estado')->options([
-                    'activo' => 'Activo',
-                    'inactivo' => 'Inactivo',
+                    'Disponible' => 'Disponible',
+                    'Ocupada' => 'Ocupada',
                 ])->required(),
                 TextInput::make('Descripcion')->label('Descripción')->required(),
             ]);
