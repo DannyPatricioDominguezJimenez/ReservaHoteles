@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ModifyResource\Pages;
+namespace App\Filament\Resources\CuadruplesResource\Pages;
 
-use App\Filament\Resources\ModifyResource;
+use App\Filament\Resources\CuadruplesResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditModify extends EditRecord
+class EditCuadruples extends EditRecord
 {
-    protected static string $resource = ModifyResource::class;
+    protected static string $resource = CuadruplesResource::class;
 
     protected function getHeaderActions(): array
     {

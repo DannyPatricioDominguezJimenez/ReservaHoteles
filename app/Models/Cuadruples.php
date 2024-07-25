@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Modificaciones extends Model
+class Cuadruples extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'imagen',
         'tipohabitacion',

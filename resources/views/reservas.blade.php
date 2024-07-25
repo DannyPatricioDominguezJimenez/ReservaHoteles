@@ -277,24 +277,24 @@
 
                     <!-- Habitación Suite -->
                     <p class="text-center mt-8 font-medium text-slate-500">Hotel Starfish</p>
+                    
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/habitacion1.jpeg" class="object-cover h-52 w-full"
+                        @foreach($suites as $suite)
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <img src="{{ asset('storage/' . $suite->imagen) }}" class="object-cover h-52 w-full"
                                 alt="Habitación Suite">
                             <div class="p-6">
                                 <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
                                     <a href="{{ route('reservasform') }}" class="hover:underline">
-                                        Habitación Suite
+                                    {{ $suite->tipohabitacion }}
                                     </a>
                                 </h3>
-                                <p><strong>Tarifa:</strong> $56</p>
-                                <p><strong>Estado:</strong> Disponible</p>
+                                <p><strong>Tarifa:</strong> ${{ $suite->tarifa }}</p>
+                                <p><strong>Estado:</strong> {{ $suite->Estado }}</p>
                                 <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>2 camas tamaño queen</li>
+                                    @foreach(explode(',', $suite->Descripcion) as $descripcion)
+                                        <li>{{ $descripcion }}</li>
+                                    @endforeach
                                 </ul>
                                 <div class="flex justify-center">
                                     <a href="{{ route('reservasform') }}"
@@ -303,62 +303,10 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/Suite2.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="{{ route('reservasform') }}" class="hover:underline">
-                                        Habitación Suite Secundaria
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $100</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>2 camas tamaño queen</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
                             </div>
-                        </div>
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/Suite3.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="{{ route('reservasform') }}" class="hover:underline">
-                                        Habitación Suite Secundaria
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $90</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>2 camas tamaño queen</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
+                    
                     <h2 class="mt-20 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-white shadow rounded-lg overflow-hidden">

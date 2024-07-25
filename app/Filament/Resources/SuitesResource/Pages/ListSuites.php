@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ModifyResource\Pages;
+namespace App\Filament\Resources\SuitesResource\Pages;
 
-use App\Filament\Resources\ModifyResource;
+use App\Filament\Resources\SuitesResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListModifies extends ListRecords
+class ListSuites extends ListRecords
 {
-    protected static string $resource = ModifyResource::class;
+    protected static string $resource = SuitesResource::class;
 
     protected function getHeaderActions(): array
     {
