@@ -421,115 +421,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        <!--
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/Suite2.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="">
-                                        Habitación Individual 2
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $30</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 1</li>
-                                    <li>1 cama tamaño individual</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/habitacion4.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="">
-                                        Habitación Individual 3
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $40</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 1</li>
-                                    <li>1 cama tamaño individual</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/individual3.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="">
-                                        Habitación Individual 4
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $40</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 1</li>
-                                    <li>1 cama tamaño individual</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/individual4.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="">
-                                        Habitación Individual 5
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $40</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 1</li>
-                                    <li>1 cama tamaño individual</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        -->
                     </div>
 
                     <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
@@ -589,34 +481,33 @@
                     <p class="text-center mt-4 font-medium text-slate-500">Hotel Starfish</p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-20 justify-center">
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/habitacion2.jpeg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Doble 1
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $56</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>1 cama tamaño queen</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
+                        @foreach($dobles as $doble)
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <img src="{{ asset('storage/' . $doble->imagen) }}" class="object-cover h-52 w-full"
+                                    alt="Habitación Suite">
+                                <div class="p-6">
+                                    <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
+                                        <a href="#">
+                                            {{ $doble->tipohabitacion }}
+                                        </a>
+                                    </h3>
+                                    <p><strong>Tarifa:</strong> ${{ $doble->tarifa }}</p>
+                                    <p><strong>Estado:</strong> {{ $doble->Estado }}</p>
+                                    <ul class="list-disc list-inside mb-4">
+                                        @foreach(explode(',', $doble->Descripcion) as $descripcion)
+                                            <li>{{ $descripcion }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="{{ route('reservasform') }}"
+                                            class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+                                            Reservar
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
+                        @endforeach
+                        <!--
                         <div class="bg-white shadow rounded-lg overflow-hidden">
                             <img src="habitacionesimg/habitacion5.jpeg" class="object-cover h-52 w-full"
                                 alt="Habitación Suite">
@@ -722,7 +613,7 @@
                                 </div>
                             </div>
                         </div>
-
+                    -->
                     </div>
                     <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">

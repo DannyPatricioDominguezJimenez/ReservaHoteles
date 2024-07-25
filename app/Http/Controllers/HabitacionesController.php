@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Suites;
 use App\Models\Individuales;
+use App\Models\Dobles;
 use Illuminate\Http\Request;
 
 class HabitacionesController extends Controller
@@ -11,6 +12,7 @@ class HabitacionesController extends Controller
     {
         $suites = Suites::all();
         $individuales = Individuales::all();
-        return view('reservas', compact('suites', 'individuales'));
+        $dobles = Dobles::all();
+        return view('reservas', compact('suites', 'individuales','dobles'));
     }
 }
