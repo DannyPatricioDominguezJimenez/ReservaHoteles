@@ -14,7 +14,7 @@ class DoblesSeeder extends Seeder
     public function run(): void
     {
         Dobles::create([
-            'imagen' => 'habitacionesimg/habitacion2.jpeg',
+            'imagen' => 'habitaciones/01J3KMMB9HKV36MF6Q26YJ9K1E.jpeg',
             'tipohabitacion' => 'Habitación Doble 1',
             'tarifa' => '56',
             'Estado' => 'Disponible',
@@ -22,14 +22,14 @@ class DoblesSeeder extends Seeder
         ]);
 
         Dobles::create([
-            'imagen' => 'habitacionesimg/habitacion5.jpeg',
+            'imagen' => 'habitaciones/01J3KMNR1CN4CHAEPM8RE7AFCC.jpeg',
             'tipohabitacion' => 'Habitación Doble 2',
             'tarifa' => '65',
             'Estado' => 'Disponible',
             'Descripcion' => 'Reserva ahora, paga después,Wi-Fi gratis,Desayuno continental gratis,Duerme 2,2 camas tamaño twin'
         ]);
         Dobles::create([
-            'imagen' => 'habitacionesimg/doble3.jpg',
+            'imagen' => 'habitaciones/01J3KMPXD39H3YSJV07SE95YCE.jpg',
             'tipohabitacion' => 'Habitación Doble 3',
             'tarifa' => '80',
             'Estado' => 'Disponible',
@@ -37,14 +37,14 @@ class DoblesSeeder extends Seeder
         ]);
 
         Dobles::create([
-            'imagen' => 'habitacionesimg/doble4.jpg',
+            'imagen' => 'habitaciones/01J3KMRV8A422XBPTPPANTFMFS.jpg',
             'tipohabitacion' => 'Habitación Doble 4',
             'tarifa' => '80',
             'Estado' => 'Disponible',
             'Descripcion' => 'Reserva ahora, paga después,Wi-Fi gratis,Desayuno continental gratis,Duerme 2,1 cama tamaño King'
         ]);
         Dobles::create([
-            'imagen' => 'habitacionesimg/doble5.jpg',
+            'imagen' => 'habitaciones/01J3KMSVG56T9VGVMFC6JE4ZT5.jpg',
             'tipohabitacion' => 'Habitación Doble 5',
             'tarifa' => '80',
             'Estado' => 'Disponible',

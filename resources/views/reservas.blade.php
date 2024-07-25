@@ -507,113 +507,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        <!--
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/habitacion5.jpeg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Doble 2
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $65</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>2 camas tamaño twin</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/doble3.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Doble 3
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $80</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>1 cama tamaño king</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/doble4.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Doble 4
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $80</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>1 cama tamaño king</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/doble5.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Suite">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Doble 5
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $80</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>1 cama tamaño king</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    -->
                     </div>
                     <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -677,115 +571,32 @@
                     </h2>
                     <p class="text-center mt-4 font-medium text-slate-500">Hotel Starfish</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-20 justify-center">
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/cuadruple1.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Cuádruple">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Cuádruple 1
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $120</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 4</li>
-                                    <li>2 camas tamaño queen</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
+                        @foreach($cuadruples as $cuadruple)
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <img src="{{ asset('storage/' . $cuadruple->imagen) }}" class="object-cover h-52 w-full"
+                                    alt="Habitación Cuádruple">
+                                <div class="p-6">
+                                    <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
+                                        <a href="#">
+                                            {{ $cuadruple->tipohabitacion }}
+                                        </a>
+                                    </h3>
+                                    <p><strong>Tarifa:</strong> ${{ $cuadruple->tarifa }}</p>
+                                    <p><strong>Estado:</strong> {{ $cuadruple->Estado }}</p>
+                                    <ul class="list-disc list-inside mb-4">
+                                        @foreach(explode(',', $cuadruple->Descripcion) as $descripcion)
+                                            <li>{{ $descripcion }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="{{ route('reservasform') }}"
+                                            class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+                                            Reservar
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/cuadruple2.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Cuádruple">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Cuádruple 2
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $130</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 4</li>
-                                    <li>2 camas tamaño queen</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/cuadruple3.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Cuádruple">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Cuádruple 3
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $140</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 4</li>
-                                    <li>2 camas tamaño queen</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white shadow rounded-lg overflow-hidden">
-                            <img src="habitacionesimg/cuadruple4.jpg" class="object-cover h-52 w-full"
-                                alt="Habitación Cuádruple">
-                            <div class="p-6">
-                                <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                                    <a href="#">
-                                        Habitación Cuádruple 4
-                                    </a>
-                                </h3>
-                                <p><strong>Tarifa:</strong> $140</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul class="list-disc list-inside mb-4">
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 4</li>
-                                    <li>2 camas tamaño queen</li>
-                                </ul>
-                                <div class="flex justify-center">
-                                    <a href="{{ route('reservasform') }}"
-                                        class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
-                                        Reservar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                     <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
