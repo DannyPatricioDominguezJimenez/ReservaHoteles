@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ModifyResource\Pages;
-use App\Filament\Resources\ModifyResource\RelationManagers;
-use App\Models\Modificaciones;
+use App\Filament\Resources\SuitesResource\Pages;
+use App\Filament\Resources\SuitesResource\RelationManagers;
+use App\Models\Suites;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -18,9 +18,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 
-class ModifyResource extends Resource
+class SuitesResource extends Resource
 {
-    protected static ?string $model = Modificaciones::class;
+    protected static ?string $model = Suites::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
     protected static ?string $navigationGroup = 'Gestion Habitaciones';
@@ -33,18 +33,21 @@ class ModifyResource extends Resource
     {
         return 'count';
     }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 FileUpload::make('imagen')
                 ->image()
-                ->directory('habitaciones'),
+                ->disk('public')
+                ->directory('habitaciones')
+                -> required(),
                 TextInput::make('tipohabitacion')->label('Tipo de Habitación')->required(),
                 TextInput::make('tarifa')->label('Tarifa')->numeric()->required(),
                 Select::make('Estado')->label('Estado')->options([
-                    'activo' => 'Activo',
-                    'inactivo' => 'Inactivo',
+                    'Disponible' => 'Disponible',
+                    'Ocupada' => 'Ocupada',
                 ])->required(),
                 TextInput::make('Descripcion')->label('Descripción')->required(),
             ]);
@@ -67,7 +70,7 @@ class ModifyResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                    ->successNotificationTitle('Habitacion Eliminado'),
+                    ->successNotificationTitle('Habitacion Eliminada'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -86,9 +89,9 @@ class ModifyResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListModifies::route('/'),
-            'create' => Pages\CreateModify::route('/create'),
-            'edit' => Pages\EditModify::route('/{record}/edit'),
+            'index' => Pages\ListSuites::route('/'),
+            'create' => Pages\CreateSuites::route('/create'),
+            'edit' => Pages\EditSuites::route('/{record}/edit'),
         ];
     }
 }
