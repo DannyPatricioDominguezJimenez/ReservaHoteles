@@ -130,7 +130,7 @@
                 class="flex flex-col-reverse md:flex-row min-w-full py-6 space-y-8 justify-center md:justify-between md:space-x-10">
                 <input id="search"
                     class="flex leading-none focus:outline-none border-b-2 hover:border-b-3 border-red-800 w-5/6 mt-12 mx-auto md:w-1/4 md:mt-0 md:mx-0"
-                    type="text" >
+                    type="text">
                 <a class="flex-1 md:self-start" href="#">
                     <div class="flex justify-center">
                         <div class="flex justify-center items-center">
@@ -172,7 +172,7 @@
         </div>
         <nav id="bar" class="flex justify-center">
             <div class="flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4 text-center text-gray-500">
-            <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
 
                 <a href="{{ route('reservas') }}" class="mx-8 hover:text-red-900">Reservas</a>
                 <a href="{{ url('/Ofertas') }}" class="mx-8 hover:text-red-900">Ofertas</a>
@@ -182,14 +182,12 @@
     </div>
     <!-- component -->
     <section class="">
-        <div
-            class="bg-[url('/imagenes/VERSION1.jpg')] h-screen bg-cover bg-center flex justify-items-center items-center">
+        <div class="bg-cover bg-center flex justify-center items-center h-screen"
+            style="background-image: url('{{ asset('imagenes/VERSION1.jpg') }}');">
             <div class="px-10 lg:px-32 xl:px-40 text-center">
                 <h1 class="text-6xl font-semibold font-serif mb-6">
-
                     <span>HOTEL STARFISH</span>
                 </h1>
-
             </div>
         </div>
     </section>
@@ -232,7 +230,7 @@
                     nuestras suites están pensadas para satisfacer las necesidades de quienes buscan una experiencia de
                     hospedaje de alta gama.</p>
                 <div class="flex flex-col justify-center lg:flex-row">
-                <a href="{{ route('reservas') }}#habitaciones-suite"
+                    <a href="{{ route('reservas') }}#habitaciones-suite"
                         class="flex items-center px-6 py-3 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                         Conoce Nuestras Habitaciones
                     </a>
@@ -258,7 +256,7 @@
                     funcionalidad. Cada habitación individual está equipada con comodidades modernas y un ambiente
                     acogedor, ideal para quienes prefieren viajar solos y disfrutar de su propio espacio.</p>
                 <div class="flex flex-col w-full gap-2 md:justify-start md:flex-row">
-                <a href="{{ route('reservas') }}#habitaciones-individuales"
+                    <a href="{{ route('reservas') }}#habitaciones-individuales"
                         class="flex items-center px-6 py-3 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                         Conoce Nuestras Habitaciones
                     </a>
@@ -283,7 +281,7 @@
                     de
                     tu estancia una experiencia memorable en el Hotel Starfish.</p>
                 <div class="flex flex-col justify-center lg:flex-row">
-                <a href="{{ route('reservas') }}#habitaciones-dobles"
+                    <a href="{{ route('reservas') }}#habitaciones-dobles"
                         class="flex items-center px-6 py-3 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                         Conoce Nuestras Habitaciones
                     </a>
@@ -390,10 +388,12 @@
             </div>
         </div>
     </section>
+
     <section class="text-gray-700 body-font border-t border-gray-200">
         <div class="container px-5 py-24 mx-auto flex flex-wrap">
             <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-                <img alt="feature" class="object-cover object-center h-full w-full" src="/imagenes/imagenca4.jpg">
+                <img alt="feature" class="object-cover object-center h-full w-full"
+                    src="{{ asset('imagenes/imagenca4.jpg') }}">
             </div>
 
             <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
@@ -602,7 +602,7 @@
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="links">
-            <a href="{{ route('inicio') }}">Inicio</a>
+                <a href="{{ route('inicio') }}">Inicio</a>
                 <span>|</span>
                 <a href="{{ route('reservas') }}">Reservas</a>
                 <span>|</span>

@@ -156,15 +156,12 @@
         <nav id="bar" class="flex justify-center">
             <div class="flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4 text-center text-gray-500">
             <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
-
                 <a href="{{ route('reservas') }}" class="mx-8 hover:text-red-900">Reservas</a>
                 <a href="{{ url('/Ofertas') }}" class="mx-8 hover:text-red-900">Ofertas</a>
                 <a href="{{ url('/Conctactanos') }}" class="mx-8 hover:text-red-900">Contactanos</a>
             </div>
         </nav>
     </div>
-    <!-- component -->
-    <!-- component -->
 
     <head>
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
@@ -230,7 +227,7 @@
         <div class="sliderAx h-auto">
             <div id="slider-1" class="container mx-auto">
                 <div class="bg-cover bg-contain h-96 text-white py-24 px-10 object-fill"
-                    style="background-image: url('/habitacionesimg/Deluxe.jpg')">
+                style="background-image: url('{{ asset('habitacionesimg/Deluxe.jpg') }}')">
                     <div class="md:w-1/2">
                         <p class="font-bold text-sm uppercase">Habitaciones</p>
                         <p class="text-3xl font-bold">Hotel Starfish</p>
@@ -241,7 +238,7 @@
 
             <div id="slider-2" class="container mx-auto">
                 <div class="bg-cover bg-contain h-96 text-white py-24 px-10 object-fill"
-                    style="background-image:url('/habitacionesimg/Deluxe2.jpg')">
+                style="background-image: url('{{ asset('habitacionesimg/Deluxe2.jpg') }}')">
                     <p class="font-bold text-sm uppercase">Habitaciones</p>
                     <p class="text-3xl font-bold">Hotel Starfish</p>
                 </div> <!-- container -->
