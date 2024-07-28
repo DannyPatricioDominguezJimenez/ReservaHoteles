@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 Route::get('/Conctactanos', function () {
-    return view('prueba');
+    return view('contactanos');
 });
 
 Route::get('/InicioSesion', function () {

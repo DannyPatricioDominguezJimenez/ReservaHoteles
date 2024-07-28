@@ -181,18 +181,19 @@
         </nav>
     </div>
     <!-- component -->
-    <section class="">
-        <div
-            class="bg-[url('/imagenes/VERSION1.jpg')] h-screen bg-cover bg-center flex justify-items-center items-center">
-            <div class="px-10 lg:px-32 xl:px-40 text-center">
+    <section>
+        <div class="h-screen bg-cover bg-center flex justify-items-center items-center">
+            <img src="imagenes/VERSION1.jpg" alt="Hotel Starfish" class="absolute w-full h-full object-cover">
+            <div class="relative px-10 lg:px-32 xl:px-40 text-center">
                 <h1 class="text-6xl font-semibold font-serif mb-6">
-
                     <span>HOTEL STARFISH</span>
                 </h1>
-
             </div>
         </div>
     </section>
+
+
+
 
 
     <section class="text-gray-700 body-font">
@@ -218,7 +219,7 @@
     <!-- component -->
     <h2 class="font-bold text-center text-4xl text-slate-700 font-display">
         HABITACIONES
-    </h2><br>
+    </h2><br>  <!--AQuiii-->
     <section class="text-blueGray-700 bg-white mt-20">
         <div class="container flex flex-col items-center px-5 py-16 mx-auto md:flex-row lg:px-28">
             <div class="flex flex-col items-start mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0">
@@ -393,7 +394,7 @@
     <section class="text-gray-700 body-font border-t border-gray-200">
         <div class="container px-5 py-24 mx-auto flex flex-wrap">
             <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-                <img alt="feature" class="object-cover object-center h-full w-full" src="/imagenes/imagenca4.jpg">
+                <img alt="feature" class="object-cover object-center h-full w-full" src="imagenes/imagenca4.jpg">
             </div>
 
             <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
