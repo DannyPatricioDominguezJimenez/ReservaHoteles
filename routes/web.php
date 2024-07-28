@@ -13,6 +13,13 @@ Route::get('/Conctactanos', function () {
     return view('contactanos');
 });
 
+Route::get('/', function () {
+    return view('Inicio');
+});
+Route::get('/Conctactanos', function () {
+    return view('prueba');
+});
+
 Route::get('/InicioSesion', function () {
     return view('iniciosesion');
 });
@@ -27,7 +34,6 @@ Route::get('/ReservasForm', function () {
     return view('reservasform');
 })->name('reservasform');
 
-
 Route::get('/registro', function () {
     return view('registro');
 });
@@ -36,8 +42,9 @@ Route::post('/registro', [RegistroController::class, 'store'])->name('registro.s
 
 
 Route::post('/InicioSesion', [InicioSesionController::class, 'index'])->name('inicio.sesion');
-
-
+Route::get('/Inicio', function () {
+    return view('inicio');
+});
 
 // Ruta para mostrar el formulario
 Route::get('/reservar', function () {
@@ -57,5 +64,5 @@ Route::get('/Inicio', function () {
 Route::get('/reservas', [HabitacionesController::class, 'index'])->name('reservas');
 
 Livewire::setUpdateRoute(function($handle) {
-    return Route::post('/ReservaHoteles/public/livewire/update', $handle);
+    return Route::post('/ReservaHoteles/public/livewire/update',$handle);
 });

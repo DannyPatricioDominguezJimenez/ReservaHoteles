@@ -228,30 +228,31 @@
 
     <body>
         <div class="sliderAx h-auto">
-            <div id="slider-1" class="container mx-auto">
-                <div class="bg-cover bg-contain h-96 text-white py-24 px-10 object-fill"
-                    style="background-image: url('/habitacionesimg/Deluxe.jpg')">
-                    <div class="md:w-1/2">
-                        <p class="font-bold text-sm uppercase">Habitaciones</p>
-                        <p class="text-3xl font-bold">Hotel Starfish</p>
-                    </div>
-                </div> <!-- container -->
-                <br>
-            </div>
-
-            <div id="slider-2" class="container mx-auto">
-                <div class="bg-cover bg-contain h-96 text-white py-24 px-10 object-fill"
-                    style="background-image:url('/habitacionesimg/Deluxe2.jpg')">
+        <div id="slider-1" class="w-full">
+            <div class="bg-cover bg-center h-96 text-white py-24 px-10"
+                style="background-image: url('habitacionesimg/Deluxe.jpg')">
+                <div class="md:w-1/2">
                     <p class="font-bold text-sm uppercase">Habitaciones</p>
                     <p class="text-3xl font-bold">Hotel Starfish</p>
-                </div> <!-- container -->
-                <br>
-            </div>
+                </div>
+            </div> <!-- container -->
+            <br>
         </div>
-        <div class="flex justify-between w-12 mx-auto pb-2">
-            <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2"></button>
-            <button id="sButton2" onclick="sliderButton2()" class="bg-purple-400 rounded-full w-4 p-2"></button>
+
+        <div id="slider-2" class="w-full">
+            <div class="bg-cover bg-center h-96 text-white py-24 px-10"
+                style="background-image:url('habitacionesimg/Deluxe2.jpg')">
+                <p class="font-bold text-sm uppercase">Habitaciones</p>
+                <p class="text-3xl font-bold">Hotel Starfish</p>
+            </div> <!-- container -->
+            <br>
         </div>
+    </div>
+    <div class="flex justify-between w-12 mx-auto pb-2">
+        <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2"></button>
+        <button id="sButton2" onclick="sliderButton2()" class="bg-purple-400 rounded-full w-4 p-2"></button>
+    </div>
+
 
 
 

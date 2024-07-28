@@ -372,8 +372,7 @@
                     <div class="card-title">Vistas Espectaculares</div>
                     <img src="imagenes/Comodidad.jpg" alt="Vistas Espectaculares">
                     <div class="card-description">Déjate maravillar por las vistas impresionantes que rodean nuestro
-                        hotel,
-                        desde majestuosos paisajes marinos hasta panorámicas de montañas. Un verdadero deleite para los
+                        hotel, desde majestuosos paisajes marinos hasta panorámicas de montañas. Un verdadero deleite para los
                         sentidos
                         que hará de tu estancia una experiencia inolvidable.</div>
                 </div>
