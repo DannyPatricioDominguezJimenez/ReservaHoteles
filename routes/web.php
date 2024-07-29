@@ -6,6 +6,7 @@ use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\HabitacionesController;
 use App\Http\Controllers\InicioSesionController;
+use App\Http\Controllers\ServiciosController;
 
 Route::get('/', function () {
     return view('inicio');
@@ -61,6 +62,10 @@ Route::get('/Inicio', function () {
 
 
 Route::get('/reservas', [HabitacionesController::class, 'index'])->name('reservas');
+
+Route::get('/', [ServiciosController::class, 'index'])->name('inicio');
+// Ruta adicional para /inicio si es necesario
+Route::get('/inicio', [ServiciosController::class, 'index'])->name('inicio');
 
 Livewire::setUpdateRoute(function($handle) {
     return Route::post('/ReservaHoteles/public/livewire/update', $handle);

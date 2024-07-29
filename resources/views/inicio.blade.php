@@ -338,59 +338,14 @@
                 </h1>
             </div>
             <div class="container cards-container">
+            @foreach ($servicios as $servicio)
                 <div class="card">
-                    <div class="card-title">Rooftop Bar</div>
-                    <img src="imagenes/ROFBAR.jpg" alt="Rooftop Bar">
-                    <div class="card-description">Disfruta de vistas espectaculares y cócteles únicos en nuestro
-                        vibrante
-                        rooftop bar, el lugar perfecto para relajarte con amigos y disfrutar del ambiente nocturno.
+                    <div class="card-title">{{ $servicio->titulo }}</div>
+                    <img src="{{ asset('storage/' . $servicio->imagen) }}" alt="Rooftop Bar">
+                    <div class="card-description">{{ $servicio->descripcion }}
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="card-title">Restaurante </div>
-                    <img src="imagenes/Bar.jpg" alt="Restaurante Gourmet">
-                    <div class="card-description">Disfrute de una experiencia culinaria inolvidable en nuestro
-                        restaurante
-                        gourmet, con platos que destacan lo mejor de la cocina local e internacional.</div>
-                </div>
-                <div class="card">
-                    <div class="card-title">Habitación de Lujo</div>
-                    <img src="imagenes/Habitaciones.jpg" alt="Habitación de Lujo">
-                    <div class="card-description">Disfruta de una estancia de lujo en nuestras habitaciones, diseñadas
-                        para tu
-                        confort con vistas impresionantes y servicios exclusivos.</div>
-                </div>
-                <div class="card">
-                    <div class="card-title">SPA</div>
-                    <img src="imagenes/SPA.jpg" alt="Spa de Lujo">
-                    <div class="card-description">Sumérgete en la relajación total en nuestro exclusivo spa, donde
-                        podrás
-                        disfrutar de una variedad de tratamientos rejuvenecedores y terapias de bienestar, todo en un
-                        ambiente
-                        sereno y lujoso.</div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">Vistas Espectaculares</div>
-                    <img src="imagenes/Comodidad.jpg" alt="Vistas Espectaculares">
-                    <div class="card-description">Déjate maravillar por las vistas impresionantes que rodean nuestro
-                        hotel,
-                        desde majestuosos paisajes marinos hasta panorámicas de montañas. Un verdadero deleite para los
-                        sentidos
-                        que hará de tu estancia una experiencia inolvidable.</div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">Espacios Cómodos en la Playa</div>
-                    <img src="imagenes/Espacios.jpg" alt="Espacios Cómodos en la Playa">
-                    <div class="card-description">Relájate en nuestros exclusivos espacios frente al mar, equipados con
-                        cómodas
-                        tumbonas y sombrillas. Disfruta del sol, la brisa marina y el sonido de las olas mientras te
-                        sumerges en
-                        el confort y la tranquilidad de la playa.</div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>
