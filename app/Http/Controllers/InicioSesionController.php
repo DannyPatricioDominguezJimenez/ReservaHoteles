@@ -3,46 +3,49 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Login;
+use Illuminate\Support\Facades\Log;
 
-class LoginController extends Controller
+class InicioSesionController extends Controller
 {
-    // Mostrar el formulario de inicio de sesión
     public function showLoginForm()
     {
-        return view('inicio_sesion');
+        return view('iniciosesion'); // Asegúrate de que tienes una vista 'iniciosesion.blade.php'
     }
 
-    // Procesar el inicio de sesión
-    public function login(Request $request)
+    public function authenticate(Request $request)
     {
-        // Validar los datos del formulario de inicio de sesión
-        $credentials = $request->validate([
-            'username' => 'required|string|email',
-            'password' => 'required|string',
+        // Validar los datos del formulario
+        $request->validate([
+            'usuario' => 'required|email', // Asumimos que 'usuario' es el correo electrónico
+            'contraseña' => 'required',
         ]);
 
-        // Intentar autenticar al usuario
-        if (Auth::attempt($credentials)) {
-            // Autenticación exitosa, limpiar los datos prellenados de la sesión
-            $request->session()->forget(['email', 'password']);
+        // Registros de depuración
+        Log::info('Datos recibidos: ', $request->all());
 
-            // Redirigir al usuario a la página principal o a otra página
-            return redirect('/Inicio');
+        // Verificar si el correo ya existe en la base de datos
+        $existingUser = Login::where('usuario', $request->usuario)->first();
+
+        if (!$existingUser) {
+            // Guardar los datos en la base de datos solo si no existe
+            $login = new Login;
+            $login->usuario = $request->usuario;
+            $login->contraseña = bcrypt($request->contraseña); // Encriptar la contraseña
+            $login->save();
+
+            // Confirmación de guardado
+            Log::info('Datos guardados en la base de datos.');
+        } else {
+            // Confirmación de que el usuario ya existe
+            Log::info('El usuario ya existe en la base de datos.');
         }
 
-        // Si la autenticación falla, redirigir de nuevo al formulario de inicio de sesión con un mensaje de error
-        return redirect()->back()->withErrors([
-            'username' => 'Credenciales incorrectas.',
-        ]);
-    }
-
-    // Cerrar sesión
-    public function logout()
-    {
-        Auth::logout();
-
-        // Redirigir al usuario a la página de inicio o a donde desees después de cerrar sesión
-        return redirect('Inicio');
+        // Redirigir basado en el correo electrónico
+        if ($request->usuario === 'joel@admin.com') {
+            return redirect()->route('filament.dashboard.pages.dashboard'); // Redirigir a la ruta 'dashboard'
+        } else {
+            return redirect()->route('inicio')->with('success', 'Inicio de sesión exitoso.');
+        }
     }
 }

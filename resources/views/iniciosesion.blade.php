@@ -99,11 +99,12 @@
                     </div>
 
                     <div class="mt-8">
-                        <form>
+                        <form method="POST" action="{{ route('inicio.authenticate') }}">
+                            @csrf
                             <div>
                                 <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Correo
                                     Electrónico</label>
-                                <input type="email" name="email" id="email" placeholder="example@example.com"
+                                <input type="email" name="usuario" id="usuario" placeholder="example@example.com"
                                     class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
@@ -114,12 +115,12 @@
 
                                 </div>
 
-                                <input type="password" name="password" id="password" placeholder="Contraseña"
+                                <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña"
                                     class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
                             <div class="mt-6">
-                                <button onclick="window.location.href='{{ route('inicio') }}'"
+                                <button type="submit"
                                     class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                                     Iniciar sesión
                                 </button>

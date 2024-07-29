@@ -5,6 +5,7 @@ use Filament\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\HabitacionesController;
+use App\Http\Controllers\InicioSesionController;
 
 Route::get('/', function () {
     return view('inicio');
@@ -35,7 +36,12 @@ Route::get('/registro', function () {
 Route::post('/registro', [RegistroController::class, 'store'])->name('registro.store');
 
 
-Route::post('/InicioSesion', [InicioSesionController::class, 'index'])->name('inicio.sesion');
+
+Route::get('/InicioSesion', [InicioSesionController::class, 'showLoginForm'])->name('inicio.sesion');
+Route::post('/InicioSesion', [InicioSesionController::class, 'authenticate'])->name('inicio.authenticate');
+Route::get('/Inicio', function () {
+    return view('inicio'); // Asegúrate de tener una vista 'inicio.blade.php'
+})->name('inicio');
 
 
 
