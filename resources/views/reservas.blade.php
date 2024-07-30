@@ -1,103 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Starfish</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Reservas</title>
     <style>
-        body {
-            padding-top: 56px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-image: url('imagenes/Fondo.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 0;
-            color: #fff;
-        }
-
-        .navbar {
-            background-color: #000;
-        }
-
-        .navbar-brand img {
-            height: 60px;
-        }
-
-        .navbar-nav .nav-link {
-            color: #fff !important;
-        }
-
-        .navbar-nav .nav-link.active {
-            font-weight: bold;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #ccc !important;
-        }
-
-        .btn-outline-light {
-            color: #fff;
-            border-color: #fff;
-        }
-
-        .btn-outline-light:hover {
-            color: #000;
-            background-color: #fff;
-            border-color: #fff;
-        }
-
-        .contact-info {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: #000;
-            text-align: center;
-        }
-
-        .contact-info h2 {
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            color: #007bff;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .map-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .map-container iframe {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
         .footer {
             background-color: #000;
             color: #fff;
             padding: 20px 0;
             text-align: center;
             width: 100%;
+            margin-top: auto;
         }
 
         .footer .social-media {
@@ -138,7 +56,6 @@
 
         .banner-content {
             text-align: center;
-            /* Centra el texto dentro del banner */
         }
 
         .social-media {
@@ -147,415 +64,637 @@
             align-items: center;
             gap: 10px;
             color: #fff;
-            /* Color blanco del texto */
         }
 
         .social-media i {
             font-size: 24px;
-            /* Tamaño de los iconos */
             margin: 0 10px;
-            /* Espacio entre los iconos */
             color: #fff;
-            /* Color blanco de los iconos */
         }
 
-        .room-card {
-            margin-bottom: 30px;
-            height: 100%;
+        h2 {
+            text-align: center;
+        }
+
+        .services-section {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
         }
 
-        .room-card .card-img-carousel {
-            height: 200px;
-            object-fit: cover;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+        .service {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
         }
 
-        .room-card .card-body {
-            background-color: #fff;
-            color: #000;
-            border-radius: 0 0 8px 8px;
-            flex-grow: 1;
+        .service i {
+            font-size: 2em;
+            margin-bottom: 10px;
         }
 
-        .room-card .card-body h5 {
-            font-weight: bold;
-        }
-
-        .room-card .card-body p {
-            margin: 5px 0;
-        }
-
-        .carousel-item img {
-            height: 200px;
-            object-fit: cover;
+        .service h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
         }
     </style>
+
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="imagenes/logo.jpg" alt="Logo" style="vertical-align: middle;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/Inicio') }}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('reservas') }}">Reservas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/Ofertas') }}">Ofertas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/Conctactanos') }}">Contáctanos</a>
-                    </li>
-                </ul>
+    <div class="bg-gold-400 border-b-2 shadow-md border-gray-100 pb-5">
+        <div class="max-w-7xl mx-auto my-5 px-4 sm:px-6">
+            <div
+                class="flex flex-col-reverse md:flex-row min-w-full py-6 space-y-8 justify-center md:justify-between md:space-x-10">
+                <input id="search"
+                    class="flex leading-none focus:outline-none border-b-2 hover:border-b-3 border-red-800 w-5/6 mt-12 mx-auto md:w-1/4 md:mt-0 md:mx-0"
+                    type="text">
+                <a class="flex-1 md:self-start" href="#">
+                    <div class="flex justify-center">
+                        <div class="flex justify-center items-center">
+                            <span
+                                class="pt-1 mx-3 whitespace-nowrap text-4xl italic font-light text-red-700 hover:text-gray-900">Hotel
+                                Starfish</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="flex justify-around">
+                    <div class="flex justify-end">
+
+                        <a class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
+                            <img class="m-1 inline-block h-5 w-5 rounded-full ring-2 ring-white"
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                                alt="">
+                            <button class="btn btn-outline-light me-2" type="button"
+                                onclick="window.location.href='{{ url('/InicioSesion') }}'">Iniciar Sesión</button>
+                        </a>
+                        <a class="mx-4 whitespace-nowrap text-base text-red-800 hover:text-gray-900" href="#">
+                            <button class="btn btn-outline-light" type="button"
+                                onclick="window.location.href='{{url('/registro')}}'">Registrarse</button>
+                        </a>
+                    </div>
+                    <div class="-my-2 md:hidden">
+                        <button type="button"
+                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-900 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                            aria-expanded="false">
+                            <span class="sr-only">Open menu</span>
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+        <nav id="bar" class="flex justify-center">
+            <div class="flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4 text-center text-gray-500">
+                <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
 
+                <a href="{{ route('reservas') }}" class="mx-8 hover:text-red-900">Reservas</a>
+                <a href="{{ url('/Ofertas') }}" class="mx-8 hover:text-red-900">Ofertas</a>
+                <a href="{{ url('/Conctactanos') }}" class="mx-8 hover:text-red-900">Contactanos</a>
+            </div>
+        </nav>
+    </div>
+    <!-- component -->
+    <!-- component -->
 
-    <!-- Contenido de la página -->
-    <div class="content">
-        <div class="banner-content">
-            <h1 class="mt-5" style="font-family: 'Bonheur Royale', cursive; font-size: 3rem;">Bienvenido al Hotel
-                Starfish</h1>
-            <p style="font-family: 'Bonheur Royale', cursive; font-size: 1.5rem;">"Elige tu habitación".</p>
+    <head>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        <script>
+            var cont = 0;
+            var xx;
+
+            function loopSlider() {
+                xx = setInterval(function () {
+                    switch (cont) {
+                        case 0: {
+                            $("#slider-1").fadeOut(400);
+                            $("#slider-2").delay(400).fadeIn(400);
+                            $("#sButton1").removeClass("bg-purple-800");
+                            $("#sButton2").addClass("bg-purple-800");
+                            cont = 1;
+                            break;
+                        }
+                        case 1: {
+                            $("#slider-2").fadeOut(400);
+                            $("#slider-1").delay(400).fadeIn(400);
+                            $("#sButton2").removeClass("bg-purple-800");
+                            $("#sButton1").addClass("bg-purple-800");
+                            cont = 0;
+                            break;
+                        }
+                    }
+                }, 8000);
+            }
+
+            function reinitLoop(time) {
+                clearInterval(xx);
+                setTimeout(loopSlider, time);
+            }
+
+            function sliderButton1() {
+                $("#slider-2").fadeOut(400);
+                $("#slider-1").delay(400).fadeIn(400);
+                $("#sButton2").removeClass("bg-purple-800");
+                $("#sButton1").addClass("bg-purple-800");
+                reinitLoop(4000);
+                cont = 0;
+            }
+
+            function sliderButton2() {
+                $("#slider-1").fadeOut(400);
+                $("#slider-2").delay(400).fadeIn(400);
+                $("#sButton1").removeClass("bg-purple-800");
+                $("#sButton2").addClass("bg-purple-800");
+                reinitLoop(4000);
+                cont = 1;
+            }
+
+            $(window).ready(function () {
+                $("#slider-2").hide();
+                $("#sButton1").addClass("bg-purple-800");
+                loopSlider();
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="sliderAx h-auto">
+            <div id="slider-1" class="container mx-auto">
+                <div class="bg-cover bg-contain h-96 text-white py-24 px-10 object-fill"
+                    style="background-image: url('{{ asset('habitacionesimg/Deluxe.jpg') }}')">
+                    <div class="md:w-1/2">
+                        <p class="font-bold text-sm uppercase">Habitaciones</p>
+                        <p class="text-3xl font-bold">Hotel Starfish</p>
+                    </div>
+                </div> <!-- container -->
+                <br>
+            </div>
+
+            <div id="slider-2" class="container mx-auto">
+                <div class="bg-cover bg-contain h-96 text-white py-24 px-10 object-fill"
+                    style="background-image: url('{{ asset('habitacionesimg/Deluxe2.jpg') }}')">
+                    <p class="font-bold text-sm uppercase">Habitaciones</p>
+                    <p class="text-3xl font-bold">Hotel Starfish</p>
+                </div> <!-- container -->
+                <br>
+            </div>
         </div>
-        <div class="content">
-            <div class="container mt-5">
-                <div class="row">
-                    <!-- Habitación Superior -->
-                    <div class="col-md-4">
-                        <div class="card room-card h-100">
-                            <div id="carouselHabitacion1" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="habitacionesimg/habitacion1.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Superior">
+        <div class="flex justify-between w-12 mx-auto pb-2">
+            <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2"></button>
+            <button id="sButton2" onclick="sliderButton2()" class="bg-purple-400 rounded-full w-4 p-2"></button>
+        </div>
+
+
+
+        <!-- component -->
+        <!--
+  Welcome to Tailwind Play, the official Tailwind CSS playground!
+
+  Everything here works just like it does when you're running Tailwind locally
+  with a real build pipeline. You can customize your config file, use features
+  like `@apply`, or even add third-party plugins.
+
+  Feel free to play with this example if you're just learning, or trash it and
+  start from scratch if you know enough to be dangerous. Have fun!
+-->
+        <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-slate-100 py-6 sm:py-12">
+            <div class="min-h-28">
+                <div id="habitaciones-suite" class="max-w-screen-lg mx-auto py-4">
+                    <h2 class="font-bold text-center text-6xl text-slate-700 font-display">
+                        SUITE
+                    </h2>
+
+
+
+                    <!-- Habitación Suite -->
+                    <p class="text-center mt-8 font-medium text-slate-500">Hotel Starfish</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        @foreach($suites as $suite)
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <img src="{{ asset('storage/' . $suite->imagen) }}" class="object-cover h-52 w-full"
+                                    alt="Habitación Suite">
+                                <div class="p-6">
+                                    <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
+                                        <a href="{{ route('reservasform') }}" class="hover:underline">
+                                            {{ $suite->tipohabitacion }}
+                                        </a>
+                                    </h3>
+                                    <p><strong>Tarifa:</strong> ${{ $suite->tarifa }}</p>
+                                    <p><strong>Estado:</strong> {{ $suite->Estado }}</p>
+                                    <ul class="list-disc list-inside mb-4">
+                                        @foreach(explode(',', $suite->Descripcion) as $descripcion)
+                                            <li>{{ $descripcion }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="{{ route('reservasform') }}"
+                                            class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+                                            Reservar
+                                        </a>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion2.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Superior">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion3.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Superior">
-                                    </div>
-                                    <!-- Agrega más elementos carousel-item según sea necesario -->
                                 </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselHabitacion1" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselHabitacion1" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación Superior</h5>
-                                <p><strong>Tarifa:</strong> $20</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul>
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Servicio de aparcacoches gratuito</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>1 cama de matrimonio</li>
-                                </ul>
-                                <a href="{{ route('reservasform') }}" class="btn btn-primary">Reservar</a>
+                        @endforeach
+                    </div>
 
+                    <h2 class="mt-20 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-coffee text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">DESAYUNO</h3>
+                                <p class="text-sm">Desayunar en el hotel supone un ahorro de tiempo muy importante,
+                                    genera comodidad y facilita la experiencia de los huéspedes.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-concierge-bell text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">CONSERJE</h3>
+                                <p class="text-sm">Nuestros conserjes son el primer punto de contacto de nuestros
+                                    huéspedes y siempre están atentos para facilitar todas sus necesidades.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-shield-virus text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">BIOSEGURIDAD</h3>
+                                <p class="text-sm">Respetamos los protocolos impuestos por las autoridades locales así
+                                    como el cumplimiento de las normas de bioseguridad.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-lock text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">CAJA FUERTE</h3>
+                                <p class="text-sm">Las cajas fuertes en las habitaciones tienen la finalidad de
+                                    salvaguardar los objetos de valor o enseres como dinero, documentos privados, joyas
+                                    y objetos tecnológicos de manera confidencial.</p>
+                            </div>
+                        </div>
 
-
-
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-user-shield text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">GUARDIANÍA</h3>
+                                <p class="text-sm">Es parte de nuestra filosofía crear un ambiente seguro y confortable
+                                    para nuestros huéspedes, brindándoles la paz y tranquilidad para disfrutar su
+                                    estadía.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Cuarto Familiar -->
-                    <div class="col-md-4">
-                        <div class="card room-card h-100">
-                            <div id="carouselCuartoFamiliar" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="habitacionesimg/habitacion2.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Cuarto Familiar">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion4.jpg"
-                                            class="card-img-top card-img-carousel" alt="Cuarto Familiar">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion1.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Cuarto Familiar">
-                                    </div>
-                                    <!-- Agrega más elementos carousel-item según sea necesario -->
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselCuartoFamiliar" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselCuartoFamiliar" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                    <!-- Servicios Adicionales -->
+                    <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS ADICIONALES</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-soap text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">LAVANDERÍA</h3>
+                                <p class="text-sm">Los servicios de lavandería están disponibles cuidando con la más
+                                    alta calidad las prendas de nuestros huéspedes.</p>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Cuarto Familiar</h5>
-                                <p><strong>Tarifa:</strong> $35</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul>
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 4</li>
-                                    <li>2 camas tamaño queen</li>
-                                </ul>
-                                <a href="{{ route('reservasform') }}" class="btn btn-primary">Reservar</a>
-
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-car-side text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">TRANSPORTE VIP</h3>
+                                <p class="text-sm">La prestación del servicio de transporte VIP mejora la experiencia y
+                                    la seguridad de los huéspedes al momento de viajar a sus destinos.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-parking text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">PARQUEADERO (OFF SITE)</h3>
+                                <p class="text-sm">Coordine las necesidades de estacionamiento directamente para una
+                                    máxima comodidad.</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Habitación Doble Superior -->
-                    <div class="col-md-4">
-                        <div class="card room-card h-100">
-                            <div id="carouselHabitacionDobleSuperior" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="habitacionesimg/habitacion3.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Doble Superior">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion5.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Doble Superior">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion6.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Doble Superior">
-                                    </div>
-                                    <!-- Agrega más elementos carousel-item según sea necesario -->
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselHabitacionDobleSuperior" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselHabitacionDobleSuperior" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación Doble Superior</h5>
-                                <p><strong>Tarifa:</strong> $56</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul>
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>2 camas tamaño queen</li>
-                                </ul>
-                                <a href="{{ route('reservasform') }}" class="btn btn-primary">Reservar</a>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Habitación Deluxe -->
-                    <div class="col-md-4"><br>
-                        <div class="card room-card h-100">
-                            <div id="carouselHabitacionDeluxe" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="habitacionesimg/habitacion5.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Deluxe">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion2.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Deluxe">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion4.jpg"
-                                            class="card-img-top card-img-carousel" alt="Habitación Deluxe">
-                                    </div>
-                                    <!-- Agrega más elementos carousel-item según sea necesario -->
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselHabitacionDeluxe" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselHabitacionDeluxe" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación Deluxe</h5>
-                                <p><strong>Tarifa:</strong> $75</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul>
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 2</li>
-                                    <li>Vistas al mar</li>
-                                </ul>
-                                <a href="{{ route('reservasform') }}" class="btn btn-primary">Reservar</a>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Suite Presidencial -->
-                    <div class="col-md-4"><br>
-                        <div class="card room-card h-100">
-                            <div id="carouselSuitePresidencial" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="habitacionesimg/habitacion1.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Suite Presidencial">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion2.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Suite Presidencial">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion3.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Suite Presidencial">
-                                    </div>
-                                    <!-- Agrega más elementos carousel-item según sea necesario -->
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselSuitePresidencial" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselSuitePresidencial" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Suite Presidencial</h5>
-                                <p><strong>Tarifa:</strong> $120</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul>
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Servicio de mayordomo privado</li>
-                                    <li>Desayuno gourmet incluido</li>
-                                    <li>Acceso exclusivo al spa</li>
-                                    <li>Vistas panorámicas al mar</li>
-                                </ul>
-                                <a href="{{ route('reservasform') }}" class="btn btn-primary">Reservar</a>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Otra habitación adicional -->
-                    <div class="col-md-4"><br>
-                        <div class="card room-card h-100">
-                            <div id="carouselOtraHabitacion" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="habitacionesimg/habitacion6.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Otra Habitación">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion5.jpeg"
-                                            class="card-img-top card-img-carousel" alt="Otra Habitación">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="habitacionesimg/habitacion4.jpg"
-                                            class="card-img-top card-img-carousel" alt="Otra Habitación">
-                                    </div>
-                                    <!-- Agrega más elementos carousel-item según sea necesario -->
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselOtraHabitacion" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselOtraHabitacion" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Otra Habitación</h5>
-                                <p><strong>Tarifa:</strong> $90</p>
-                                <p><strong>Estado:</strong> Disponible</p>
-                                <ul>
-                                    <li>Reserva ahora, paga después</li>
-                                    <li>Wi-Fi gratis</li>
-                                    <li>Desayuno continental gratis</li>
-                                    <li>Duerme 3</li>
-                                    <li>Vistas a la ciudad</li>
-                                </ul>
-                                <a href="{{ route('reservasform') }}" class="btn btn-primary">Reservar</a>
-
-                            </div>
-                        </div>
-                    </div><br>
-
-
-                </div><br>
-            </div>
-        </div><br>
-
-
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="social-media">
-                    <span>Encuéntranos</span>
-                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="links">
-                    <a href="{{ url('/Inicio') }}">Inicio</a>
-                    <span>|</span>
-                    <a href="{{ route('reservas') }}">Reservas</a>
-                    <span>|</span>
-                    <a href="{{ url('/Ofertas') }}">Ofertas</a>
-                    <span>|</span>
-                    <a href="{{ url('/Conctactanos') }}">Contáctanos</a>
-                </div>
-                <div class="address">
-                </div>
-                <div class="copyright">
-                    © 2022 Your Company. All rights reserved.
                 </div>
             </div>
-        </footer>
+        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-slate-100 py-6 sm:py-12">
+            <div class="min-h-28 ">
+                <div id="habitaciones-individuales" class="max-w-screen-lg mx-auto py-4">
+                    <h2 class="font-bold text-center text-6xl text-slate-700 font-display">
+                        INDIVIDUALES
+                    </h2>
+
+                    <p class="text-center mt-4 font-medium text-slate-500">Hotel Starfish</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-20 justify-center">
+                        @foreach($individuales as $individual)
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <img src="{{ asset('storage/' . $individual->imagen) }}" class="object-cover h-52 w-full"
+                                    alt="Habitación Suite">
+                                <div class="p-6">
+                                    <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
+                                        <a href="">
+                                            {{ $individual->tipohabitacion }}
+                                        </a>
+                                    </h3>
+                                    <p><strong>Tarifa:</strong> ${{ $individual->tarifa }}</p>
+                                    <p><strong>Estado:</strong> {{ $individual->estado }}</p>
+                                    <ul class="list-disc list-inside mb-4">
+                                        @foreach(explode(',', $individual->descripcion) as $descripcion)
+                                            <li>{{ $descripcion }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="{{ route('reservasform') }}"
+                                            class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+
+                    <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-coffee text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">DESAYUNO</h3>
+                                <p class="text-sm">Incluye desayuno para empezar el día con energía.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-wifi text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">WI-FI GRATIS</h3>
+                                <p class="text-sm">Acceso gratuito a internet Wi-Fi durante toda la estancia.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-tv text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">TV CABLE</h3>
+                                <p class="text-sm">Disfrute de una variedad de canales de televisión por cable en su
+                                    habitación.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-shower text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">BAÑO PRIVADO</h3>
+                                <p class="text-sm">Baño privado equipado con artículos de aseo de calidad.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-phone-alt text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">TELÉFONO</h3>
+                                <p class="text-sm">Servicio de teléfono con llamadas locales gratuitas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <section>
+
+        </section>
+
+
+        <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-slate-100 py-6 sm:py-12">
+            <div class="min-h-28 ">
+                <div id="habitaciones-dobles" class="max-w-screen-lg mx-auto py-4">
+                    <h2 class="font-bold text-center text-6xl text-slate-700 font-display">
+                        DOBLES
+                    </h2>
+                    <p class="text-center mt-4 font-medium text-slate-500">Hotel Starfish</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-20 justify-center">
+                        @foreach($dobles as $doble)
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <img src="{{ asset('storage/' . $doble->imagen) }}" class="object-cover h-52 w-full"
+                                    alt="Habitación Suite">
+                                <div class="p-6">
+                                    <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
+                                        <a href="#">
+                                            {{ $doble->tipohabitacion }}
+                                        </a>
+                                    </h3>
+                                    <p><strong>Tarifa:</strong> ${{ $doble->tarifa }}</p>
+                                    <p><strong>Estado:</strong> {{ $doble->Estado }}</p>
+                                    <ul class="list-disc list-inside mb-4">
+                                        @foreach(explode(',', $doble->Descripcion) as $descripcion)
+                                            <li>{{ $descripcion }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="{{ route('reservasform') }}"
+                                            class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                    <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-coffee text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">DESAYUNO</h3>
+                                <p class="text-sm">Desayuno para dos personas para empezar el día con energía.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-wifi text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">WI-FI GRATIS</h3>
+                                <p class="text-sm">Acceso gratuito a internet Wi-Fi durante toda la estancia para ambos
+                                    huéspedes.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-tv text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">TV CABLE</h3>
+                                <p class="text-sm">Disfrute de una variedad de canales de televisión por cable en la
+                                    habitación.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-shower text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">BAÑO PRIVADO</h3>
+                                <p class="text-sm">Baño privado equipado con artículos de aseo de calidad para ambos
+                                    huéspedes.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-phone-alt text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">TELÉFONO</h3>
+                                <p class="text-sm">Servicio de teléfono con llamadas locales gratuitas.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-bed text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">CAMAS DOBLES</h3>
+                                <p class="text-sm">Dos camas tamaño queen para mayor comodidad de ambos huéspedes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-slate-100 py-6 sm:py-12">
+            <div class="min-h-28">
+                <div id="habitaciones-cuadruples" class="max-w-screen-lg mx-auto py-4">
+                    <h2 class="font-bold text-center text-6xl text-slate-700 font-display">
+                        CUÁDRUPLE
+                    </h2>
+                    <p class="text-center mt-4 font-medium text-slate-500">Hotel Starfish</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-20 justify-center">
+                        @foreach($cuadruples as $cuadruple)
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <img src="{{ asset('storage/' . $cuadruple->imagen) }}" class="object-cover h-52 w-full"
+                                    alt="Habitación Cuádruple">
+                                <div class="p-6">
+                                    <h3 class="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
+                                        <a href="#">
+                                            {{ $cuadruple->tipohabitacion }}
+                                        </a>
+                                    </h3>
+                                    <p><strong>Tarifa:</strong> ${{ $cuadruple->tarifa }}</p>
+                                    <p><strong>Estado:</strong> {{ $cuadruple->Estado }}</p>
+                                    <ul class="list-disc list-inside mb-4">
+                                        @foreach(explode(',', $cuadruple->Descripcion) as $descripcion)
+                                            <li>{{ $descripcion }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="{{ route('reservasform') }}"
+                                            class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+                                            Reservar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <h2 class="mt-12 mb-6 text-lg font-semibold text-center">SERVICIOS INCLUIDOS</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-coffee text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">DESAYUNO</h3>
+                                <p class="text-sm">Desayuno para cuatro personas para empezar el día con energía.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-wifi text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">WI-FI GRATIS</h3>
+                                <p class="text-sm">Acceso gratuito a internet Wi-Fi durante toda la estancia para todos
+                                    los huéspedes.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-tv text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">TV CABLE</h3>
+                                <p class="text-sm">Disfrute de una variedad de canales de televisión por cable en la
+                                    habitación.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-shower text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">BAÑO PRIVADO</h3>
+                                <p class="text-sm">Baño privado equipado con artículos de aseo de calidad para todos los
+                                    huéspedes.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-phone-alt text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">TELÉFONO</h3>
+                                <p class="text-sm">Servicio de teléfono con llamadas locales gratuitas.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-bed text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">CAMAS QUEEN</h3>
+                                <p class="text-sm">Dos camas tamaño queen para mayor comodidad de todos los huéspedes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <i class="fas fa-door-closed text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg pb-2">ESPACIO PRIVADO</h3>
+                                <p class="text-sm">Área separada para cada huésped dentro de la habitación para
+                                    privacidad adicional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </body>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-media">
+                <span>Encuéntranos</span>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="links">
+                <a href="{{ route('inicio') }}">Inicio</a>
+                <span>|</span>
+                <a href="{{ route('reservas') }}">Reservas</a>
+                <span>|</span>
+                <a href="{{ url('/Ofertas') }}">Ofertas</a>
+                <span>|</span>
+                <a href="{{ url('/Conctactanos') }}">Contáctanos</a>
+            </div>
+            <div class="address">
+            </div>
+            <div class="copyright">
+                © 2022 Your Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>

@@ -1,103 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Starfish</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Conctactanos</title>
     <style>
-        body {
-            padding-top: 56px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-image: url('imagenes/Fondo.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 0;
-            color: #fff;
-        }
-
-        .navbar {
-            background-color: #000;
-        }
-
-        .navbar-brand img {
-            height: 60px;
-        }
-
-        .navbar-nav .nav-link {
-            color: #fff !important;
-        }
-
-        .navbar-nav .nav-link.active {
-            font-weight: bold;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #ccc !important;
-        }
-
-        .btn-outline-light {
-            color: #fff;
-            border-color: #fff;
-        }
-
-        .btn-outline-light:hover {
-            color: #000;
-            background-color: #fff;
-            border-color: #fff;
-        }
-
-        .contact-info {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: #000;
-            text-align: center;
-        }
-
-        .contact-info h2 {
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            color: #007bff;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .map-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .map-container iframe {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
         .footer {
             background-color: #000;
             color: #fff;
             padding: 20px 0;
             text-align: center;
             width: 100%;
+            margin-top: auto;
         }
 
         .footer .social-media {
@@ -138,7 +56,6 @@
 
         .banner-content {
             text-align: center;
-            /* Centra el texto dentro del banner */
         }
 
         .social-media {
@@ -147,98 +64,130 @@
             align-items: center;
             gap: 10px;
             color: #fff;
-            /* Color blanco del texto */
         }
 
         .social-media i {
             font-size: 24px;
-            /* Tamaño de los iconos */
             margin: 0 10px;
-            /* Espacio entre los iconos */
             color: #fff;
-            /* Color blanco de los iconos */
         }
     </style>
+
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="imagenes/logo.jpg" alt="Logo" style="vertical-align: middle;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/Inicio') }}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('reservas') }}">Reservas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/Ofertas') }}">Ofertas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url('/Conctactanos') }}">Contáctanos</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="d-flex">
-                <button class="btn btn-outline-light me-2" type="button"
-                    onclick="window.location.href='{{ url('/InicioSesion') }}'">Iniciar Sesión</button>
-                <button class="btn btn-outline-light" type="button">Registrarse</button>
-            </div>
-        </div>
-    </nav>
-    <!-- Contenido de la página -->
-    <div class="content">
-        <div class="banner-content">
-            <h1 class="mt-5" style="font-family: 'Bonheur Royale', cursive; font-size: 3rem;">Bienvenido al Hotel
-                Starfish</h1>
-            <p style="font-family: 'Bonheur Royale', cursive; font-size: 1.5rem;">"Donde el Lujo y la Serenidad se
-                Encuentran con el Océano".</p>
-        </div>
+    <div class="bg-gold-400 border-b-2 shadow-md border-gray-100 pb-5">
+        <div class="max-w-7xl mx-auto my-5 px-4 sm:px-6">
+            <div
+                class="flex flex-col-reverse md:flex-row min-w-full py-6 space-y-8 justify-center md:justify-between md:space-x-10">
+                <input id="search"
+                    class="flex leading-none focus:outline-none border-b-2 hover:border-b-3 border-red-800 w-5/6 mt-12 mx-auto md:w-1/4 md:mt-0 md:mx-0"
+                    type="text" >
+                <a class="flex-1 md:self-start" href="#">
+                    <div class="flex justify-center">
+                        <div class="flex justify-center items-center">
+                            <span
+                                class="pt-1 mx-3 whitespace-nowrap text-4xl italic font-light text-red-700 hover:text-gray-900">Hotel
+                                Starfish</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="flex justify-around">
+                    <div class="flex justify-end">
 
-        <!-- Información de contacto -->
-        <div class="contact-info">
-            <h2>Información de Contacto</h2>
-            <p><strong>Dirección Física:</strong><br>
-                Hotel StarFish<br>
-                Costa Deslumbrante, Calle Marina #123, Ciudad Costera
-            </p>
-            <p><strong>Número de Teléfono Principal:</strong><br>
-                +123 456 7890
-            </p>
-            <p><strong>Correo Electrónico de Contacto:</strong><br>
-                <a href="mailto:contacto@hotelfish.com">contacto@hotelfish.com</a>
-            </p>
-            <p><strong>Horarios de Atención:</strong><br>
-                Lunes a Viernes: 8:00 AM - 8:00 PM<br>
-                Sábado y Domingo: 9:00 AM - 6:00 PM
-            </p>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63828.576386375884!2d-78.6847172783203!3d-0.9359282999999788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4610f5d33a74d%3A0x408aab614807127a!2sUniversidad%20de%20las%20Fuerzas%20Armadas%20ESPE%20Sede%20Latacunga%20(campus%20centro)!5e0!3m2!1ses!2sec!4v1719335786183!5m2!1ses!2sec"
-                    width="600" height="337.5" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <a class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
+                            <img class="m-1 inline-block h-5 w-5 rounded-full ring-2 ring-white"
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                                alt="">
+                            <button class="btn btn-outline-light me-2" type="button"
+                                onclick="window.location.href='{{ url('/InicioSesion') }}'">Iniciar Sesión</button>
+                        </a>
+                        <a class="mx-4 whitespace-nowrap text-base text-red-800 hover:text-gray-900" href="#">
+                            <button class="btn btn-outline-light" type="button">Registrarse</button>
+                        </a>
+                    </div>
+                    <div class="-my-2 md:hidden">
+                        <button type="button"
+                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-900 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                            aria-expanded="false">
+                            <span class="sr-only">Open menu</span>
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <p class="mt-3"><strong>Redes Sociales:</strong><br>
-                <a href="#">Facebook</a><br>
-                <a href="#">Instagram</a><br>
-                <a href="#">Twitter</a>
-            </p>
-            <p><strong>Indicaciones y Transporte:</strong><br>
-                Ubicado a 30 minutos del Aeropuerto Internacional de Ciudad Costera. Transporte privado disponible bajo
-                solicitud.
-            </p>
         </div>
+        <nav id="bar" class="flex justify-center">
+            <div class="flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4 text-center text-gray-500">
+            <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
+                
+
+                <a href="{{ route('reservas') }}" class="mx-8 hover:text-red-900">Reservas</a>
+                <a href="{{ url('/Ofertas') }}" class="mx-8 hover:text-red-900">Ofertas</a>
+                <a href="{{ url('/Conctactanos') }}" class="mx-8 hover:text-red-900">Contactanos</a>
+            </div>
+        </nav>
     </div>
 
-    <!-- Footer -->
+    <!-- component -->
+
+    <div class="relative w-full h-96">
+        <img class="absolute h-full w-full object-cover object-center" src="{{ asset('imagenes/Contactanos.jpg') }}" alt="nature image" />
+        <div class="absolute inset-0 h-full w-full bg-black/50"></div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
+            <h2 class="block antialiased tracking-normal font-sans font-semibold leading-[1.3] mb-4 text-3xl lg:text-4xl">Información de Contacto</h2>
+        </div>
+    </div>
+    <section class="pt-16">
+    <div class="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg">
+        <div class="text-left md:text-center mb-8 md:col-span-2">
+            <h2 class="text-3xl lg:text-4xl font-semibold">Para más información</h2>
+        </div>
+        <div class="info-container p-6 bg-gray-100 rounded-lg">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-map-marker-alt text-xl mr-2"></i>
+                <span class="font-semibold">Vicente Rocafuerte E3-250 y Luis Chávez</span>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-city text-xl mr-2"></i>
+                <span class="font-semibold">Ciudad de Quito</span>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-envelope text-xl mr-2"></i>
+                <span class="font-semibold">stay@arthotelsecuador.com</span>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-phone text-xl mr-2"></i>
+                <span class="font-semibold">+593 (6) 292 8710 | +593 (99) 490 3097</span>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-clock text-xl mr-2"></i>
+                <span class="font-semibold">Check-In: 14:00 pm</span>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-clock text-xl mr-2"></i>
+                <span class="font-semibold">Check-Out: 12:00 pm</span>
+            </div>
+        </div>
+        <div class="map-container bg-gray-100 rounded-lg">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.8648591545734!2d-74.00601568501109!3d40.7127760793317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDAnNDInND
+QuMCJOIDc0wrAwMCcwMC4wIlc!5e0!3m2!1sen!2s!4v1628238745098!5m2!1sen!2s"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
     <footer class="footer">
         <div class="container">
             <div class="social-media">
@@ -249,7 +198,7 @@
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="links">
-                <a href="{{ url('/Inicio') }}">Inicio</a>
+            <a href="{{ route('inicio') }}">Inicio</a>
                 <span>|</span>
                 <a href="{{ route('reservas') }}">Reservas</a>
                 <span>|</span>
@@ -264,8 +213,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

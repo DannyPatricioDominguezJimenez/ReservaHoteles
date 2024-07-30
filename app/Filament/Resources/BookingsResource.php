@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BookingsResource\Pages;
 use App\Filament\Resources\BookingsResource\RelationManagers;
-use App\Models\Bookings;
+use App\Models\Reservas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,15 +23,27 @@ use Filament\Forms\Components\Checkbox;
 
 class BookingsResource extends Resource
 {
-    protected static ?string $model = Bookings::class;
+    protected static ?string $model = Reservas::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
+    protected static ?string $navigationGroup = 'Cruds';
+    protected static ?string $recordTitleAttribute = 'apellidos';
+    
+    public static function getNavigationBadge(): ?String
+    {
+        return static::getModel()::count();
+    }
+
+    public static function getNavigationBadgeColor(): string|array|null
+    {
+        return 'count';
+    }
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('nombres')->label('Nombres')->required(),
+            TextInput::make('nombres')->label('Nombres')->required(),
             TextInput::make('apellidos')->label('Apellidos')->required(),
             TextInput::make('direccion')->label('Dirección'),
             TextInput::make('telefono')->label('Teléfono'),
@@ -55,7 +67,7 @@ class BookingsResource extends Resource
                     '5' => '5',
                 ])
                 ->required(),
-            TextInput::make('tarifa')->label('Tarifa')->numeric()->step(0.01),
+            TextInput::make('tarifa')->label('Tarifa')->numeric()->step(0.01)->prefix('$'),
             Select::make('metodopago')
                 ->label('Método de pago')
                 ->options([
@@ -64,14 +76,14 @@ class BookingsResource extends Resource
                     'Tarjetas de débito y crédito' => 'Tarjetas de débito y crédito'
                 ])
                 ->required(),
-            Select::make('ofertas')
+            /*Select::make('ofertas')
                 ->label('Ofertas')
                 ->options([
                     '10% en 10 noches' => '10% en 10 noches',
                     '20% en más de 10 noches' => '20% en más de 10 noches',
                     '2x1 Solo Alojamiento' => '2x1 Solo Alojamiento'
                 ])
-                ->nullable(),
+                ->nullable(),*/
         ]);
     }
 
@@ -79,24 +91,27 @@ class BookingsResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->label('ID')->sortable(),
+                //TextColumn::make('id')->label('ID')->sortable(),
                 TextColumn::make('nombres')->label('Nombres'),
-                TextColumn::make('apellidos')->label('Apellidos'),
+                TextColumn::make('apellidos')->label('Apellidos')->searchable(),
                 TextColumn::make('direccion')->label('Dirección'),
                 TextColumn::make('telefono')->label('Teléfono'),
-                TextColumn::make('ingreso')->label('Fecha de ingreso')->dateTime(),
-                TextColumn::make('salida')->label('Fecha de salida')->dateTime(),
+                TextColumn::make('ingreso')->label('Fecha de ingreso')->date(),
+                TextColumn::make('salida')->label('Fecha de salida')->date(),
                 TextColumn::make('tipohabitacion')->label('Tipo de habitación'),
                 TextColumn::make('nrohabitaciones')->label('Número de habitaciones'),
                 TextColumn::make('tarifa')->label('Tarifa'),
                 TextColumn::make('metodopago')->label('Método de pago'),
-                TextColumn::make('ofertas')->label('Ofertas')
+               // TextColumn::make('ofertas')->label('Ofertas')
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->successNotificationTitle('Reserva Eliminada'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

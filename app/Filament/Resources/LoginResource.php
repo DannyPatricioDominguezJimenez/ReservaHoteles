@@ -19,7 +19,21 @@ class LoginResource extends Resource
 {
     protected static ?string $model = Login::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
+    protected static ?string $navigationGroup = 'Cruds';
+
+    protected static ?string $recordTitleAttribute = 'usuario';
+    
+    public static function getNavigationBadge(): ?String
+    {
+        return static::getModel()::count();
+    }
+
+    public static function getNavigationBadgeColor(): string|array|null
+    {
+        return 'count';
+    }
+
 
     public static function form(Form $form): Form
     {
@@ -34,14 +48,17 @@ class LoginResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('usuario')->searchable(),
+                TextColumn::make('usuario')->searchable()->searchable(),
                 TextColumn::make('contraseña')->searchable()
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->successNotificationTitle('Usuario Eliminado'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
