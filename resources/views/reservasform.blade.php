@@ -71,17 +71,6 @@
             color: #fff;
         }
 
-        .btn-outline-light {
-            color: #fff;
-            border-color: #fff;
-        }
-
-        .btn-outline-light:hover {
-            color: #000;
-            background-color: #fff;
-            border-color: #fff;
-        }
-
         .content {
             flex: 1;
             display: flex;
@@ -156,7 +145,7 @@
                 class="flex flex-col-reverse md:flex-row min-w-full py-6 space-y-8 justify-center md:justify-between md:space-x-10">
                 <input id="search"
                     class="flex leading-none focus:outline-none border-b-2 hover:border-b-3 border-red-800 w-5/6 mt-12 mx-auto md:w-1/4 md:mt-0 md:mx-0"
-                    type="text" >
+                    type="text">
                 <a class="flex-1 md:self-start" href="#">
                     <div class="flex justify-center">
                         <div class="flex justify-center items-center">
@@ -177,7 +166,8 @@
                                 onclick="window.location.href='{{ url('/InicioSesion') }}'">Iniciar Sesión</button>
                         </a>
                         <a class="mx-4 whitespace-nowrap text-base text-red-800 hover:text-gray-900" href="#">
-                            <button class="btn btn-outline-light" type="button">Registrarse</button>
+                            <button class="btn btn-outline-light" type="button"
+                                onclick="window.location.href='{{url('/registro')}}'">Registrarse</button>
                         </a>
                     </div>
                     <div class="-my-2 md:hidden">
@@ -238,21 +228,23 @@
                     <label for="tipohabitacion">Tipo Habitación:</label>
                     <select id="tipohabitacion" name="tipohabitacion" required>
                         <option value="" disabled selected>Seleccione el tipo de habitación</option>
-                        <option value="simple">Simple</option>
-                        <option value="doble">Doble</option>
                         <option value="suite">Suite</option>
+                        <option value="individual">Individual</option>
+                        <option value="doble">Doble</option>
+                        <option value="cuadruple">Cuádruple</option>
                     </select>
 
                     <label for="nrohabitaciones">Nro. Habitaciones:</label>
                     <select id="nrohabitaciones" name="nrohabitaciones" required>
                         <option value="" disabled selected>Seleccione el número de habitaciones</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <option value="1">1 Habitación</option>
+                        <option value="2">2 Habitaciones</option>
+                        <option value="3">3 Habitaciones</option>
                     </select>
 
                     <label for="tarifa">Tarifa:</label>
-                    <input type="text" id="tarifa" name="tarifa" required>
+                    <input type="text" id="tarifa" name="tarifa_display" readonly>
+                    <input type="hidden" id="tarifa_hidden" name="tarifa">
 
                     <label for="metodopago">Método de Pago:</label>
                     <select id="metodopago" name="metodopago" required>
@@ -264,6 +256,7 @@
 
                     <button type="submit">Reservar</button>
                 </form>
+
             </div>
         </div>
     </div><br>
@@ -298,3 +291,60 @@
 </body>
 
 </html>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tipoHabitacionSelect = document.getElementById('tipohabitacion');
+        const nroHabitacionesSelect = document.getElementById('nrohabitaciones');
+        const ingresoInput = document.getElementById('ingreso');
+        const salidaInput = document.getElementById('salida');
+        const tarifaDisplayInput = document.getElementById('tarifa');
+        const tarifaHiddenInput = document.getElementById('tarifa_hidden');
+
+        function calcularTarifa() {
+            const tipoHabitacion = tipoHabitacionSelect.value;
+            const nroHabitaciones = parseInt(nroHabitacionesSelect.value, 10);
+            const ingresoDate = new Date(ingresoInput.value);
+            const salidaDate = new Date(salidaInput.value);
+
+            if (!tipoHabitacion || isNaN(nroHabitaciones) || isNaN(ingresoDate.getTime()) || isNaN(salidaDate.getTime())) {
+                tarifaDisplayInput.value = '';
+                tarifaHiddenInput.value = '';
+                return;
+            }
+
+            // Calcular el número de días de estancia
+            const tiempoEstancia = salidaDate - ingresoDate;
+            const numeroDias = Math.ceil(tiempoEstancia / (1000 * 60 * 60 * 24));
+
+            let tarifaPorHabitacion;
+
+            switch (tipoHabitacion) {
+                case 'suite':
+                    tarifaPorHabitacion = 150;
+                    break;
+                case 'individual':
+                    tarifaPorHabitacion = 80;
+                    break;
+                case 'doble':
+                    tarifaPorHabitacion = 100;
+                    break;
+                case 'cuadruple':
+                    tarifaPorHabitacion = 120;
+                    break;
+                default:
+                    tarifaPorHabitacion = 0;
+            }
+
+            const tarifaTotal = tarifaPorHabitacion * nroHabitaciones * numeroDias;
+            tarifaDisplayInput.value = `$${tarifaTotal}`;
+            tarifaHiddenInput.value = tarifaTotal; // Guardar solo el valor numérico en el campo oculto
+        }
+
+        tipoHabitacionSelect.addEventListener('change', calcularTarifa);
+        nroHabitacionesSelect.addEventListener('change', calcularTarifa);
+        ingresoInput.addEventListener('change', calcularTarifa);
+        salidaInput.addEventListener('change', calcularTarifa);
+    });
+</script>

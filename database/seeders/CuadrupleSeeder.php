@@ -23,21 +23,21 @@ class CuadrupleSeeder extends Seeder
         Cuadruples::create([
             'imagen' => 'habitaciones/01J3KP354NNPDVTZY1C7A22YYE.jpg',
             'tipohabitacion' => 'Habitación Cuádruple 2',
-            'tarifa' => '130',
+            'tarifa' => '120',
             'Estado' => 'Disponible',
             'Descripcion' => 'Reserva ahora, paga después,Wi-Fi gratis,Desayuno continental gratis,Duerme 4,2 cama tamaño queen'
         ]);
         Cuadruples::create([
             'imagen' => 'habitaciones/01J3KP3PHYN8KFFZR0031R9DZD.jpg',
             'tipohabitacion' => 'Habitación Cuádruple 3',
-            'tarifa' => '140',
+            'tarifa' => '120',
             'Estado' => 'Disponible',
             'Descripcion' => 'Reserva ahora, paga después,Wi-Fi gratis,Desayuno continental gratis,Duerme 4,2 cama tamaño queen'
         ]);
         Cuadruples::create([
             'imagen' => 'habitaciones/01J3KP45VCX21P29YXY5FXJ92B.jpg',
             'tipohabitacion' => 'Habitación Cuádruple 4',
-            'tarifa' => '140',
+            'tarifa' => '120',
             'Estado' => 'Disponible',
             'Descripcion' => 'Reserva ahora, paga después,Wi-Fi gratis,Desayuno continental gratis,Duerme 4,2 cama tamaño queen'
         ]);

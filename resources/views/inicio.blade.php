@@ -19,7 +19,6 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
-
         .card {
             width: 30%;
             min-width: 300px;
