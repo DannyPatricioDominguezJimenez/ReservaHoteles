@@ -8,31 +8,30 @@ use Filament\Widgets\ChartWidget;
 
 class ReservasChart extends ChartWidget
 {
-    protected static ?string $heading = 'Reservas Diarias';
+    protected static ?string $heading = 'Reservas Anuales';
 
     protected function getData(): array
     {
-        // Obtener el rango de fechas para los últimos 30 días
-        $end = Carbon::now();
-        $start = $end->copy()->subDays(29); // 30 días en total
+        // Obtener el rango de años para los últimos 5 años
+        $endYear = Carbon::now()->year;
+        $startYear = $endYear - 4; // Cambia el número de años según sea necesario
 
-        // Obtener las reservas agrupadas por día basadas en la fecha de ingreso
-        $reservas = Reservas::whereBetween('ingreso', [$start, $end])
-            ->selectRaw('DATE(ingreso) as date, COUNT(*) as count')
-            ->groupBy('date')
-            ->orderBy('date')
+        // Obtener las reservas agrupadas por año basadas en la fecha de ingreso
+        $reservas = Reservas::whereBetween('ingreso', [$startYear . '-01-01', $endYear . '-12-31'])
+            ->selectRaw('YEAR(ingreso) as year, COUNT(*) as count')
+            ->groupBy('year')
+            ->orderBy('year')
             ->get();
 
         // Formatear los datos para el gráfico
         $labels = [];
         $data = [];
 
-        $period = Carbon::now()->subDays(29)->startOfDay()->daysUntil(Carbon::now()->startOfDay());
-
-        foreach ($period as $date) {
-            $labels[] = $date->format('d M');
-            $dayReserva = $reservas->firstWhere('date', $date->format('Y-m-d'));
-            $data[] = $dayReserva ? $dayReserva->count : 0;
+        // Iterar a través de los años en el rango
+        for ($year = $startYear; $year <= $endYear; $year++) {
+            $labels[] = $year;
+            $yearReserva = $reservas->firstWhere('year', $year);
+            $data[] = $yearReserva ? $yearReserva->count : 0;
         }
 
         return [
@@ -50,6 +49,6 @@ class ReservasChart extends ChartWidget
 
     protected function getType(): string
     {
-        return 'line'; // Tipo de gráfico: línea
+        return 'bar'; // Tipo de gráfico: barra (puedes cambiarlo a 'line' si prefieres un gráfico de líneas)
     }
 }
