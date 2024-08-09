@@ -8,14 +8,16 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 
 class ReporteAñosResource extends Resource
 {
     protected static ?string $model = Reservas::class;
-    protected static ?string $navigationLabel = 'Reportes Anuales';
-    protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
+    protected static ?string $navigationLabel = 'Reporte Reservas';
+    protected static ?string $navigationIcon = 'heroicon-o-megaphone';
+    protected static ?string $navigationGroup = 'Reportes';
 
     public static function form(Form $form): Form
     {
@@ -27,18 +29,16 @@ class ReporteAñosResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('nombres'),
-                Tables\Columns\TextColumn::make('apellidos'),
-                Tables\Columns\TextColumn::make('direccion'),
-                Tables\Columns\TextColumn::make('telefono'),
-                Tables\Columns\TextColumn::make('ingreso'),
-                Tables\Columns\TextColumn::make('salida'),
-                Tables\Columns\TextColumn::make('tipohabitacion'),
-                Tables\Columns\TextColumn::make('nrohabitaciones'),
-                Tables\Columns\TextColumn::make('tarifa'),
-                Tables\Columns\TextColumn::make('metodopago'),
-                Tables\Columns\TextColumn::make('ofertas'),
+                TextColumn::make('nombres')->label('Nombres'),
+                TextColumn::make('apellidos')->label('Apellidos')->searchable(),
+                TextColumn::make('direccion')->label('Dirección'),
+                TextColumn::make('telefono')->label('Teléfono'),
+                TextColumn::make('ingreso')->label('Fecha de ingreso')->date(),
+                TextColumn::make('salida')->label('Fecha de salida')->date(),
+                TextColumn::make('tipohabitacion')->label('Tipo de habitación'),
+                TextColumn::make('nrohabitaciones')->label('Número de habitaciones'),
+                TextColumn::make('tarifa')->label('Tarifa'),
+                TextColumn::make('metodopago')->label('Método de pago'),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('year')

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use Filament\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\RegistroController;
@@ -70,3 +71,6 @@ Route::get('/inicio', [ServiciosController::class, 'index'])->name('inicio');
 Livewire::setUpdateRoute(function($handle) {
     return Route::post('/ReservaHoteles/public/livewire/update', $handle);
 });
+
+Route::get('download', [PDFController::class, 'downloadpdf'])->name('download.tes');
+

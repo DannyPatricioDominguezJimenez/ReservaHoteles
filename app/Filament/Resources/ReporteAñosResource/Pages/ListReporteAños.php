@@ -4,6 +4,7 @@ namespace App\Filament\Resources\ReporteAñosResource\Pages;
 
 use App\Filament\Resources\ReporteAñosResource;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Pages\Actions\Action;
 
 class ListReporteAños extends ListRecords
 {
@@ -17,7 +18,13 @@ class ListReporteAños extends ListRecords
     protected function getActions(): array
     {
         return [
-            // Puedes agregar botones de acción aquí si es necesario
+            Action::make('Generar reporte')
+                ->url(fn() => route('download.tes', [
+                    'filters' => json_encode($this->getTableFilters()), // Enviar filtros a la URL
+                ]))
+                ->openUrlInNewTab()
+                ->icon('heroicon-o-arrow-down-tray')
+                ->color('primary'),
         ];
     }
 }
