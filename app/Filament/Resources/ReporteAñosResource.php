@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ReporteAñosResource\Pages;
+use App\Models\ReporteAños;
 use App\Models\Reservas;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -54,7 +55,31 @@ class ReporteAñosResource extends Resource
                     )
                     ->query(function ($query, $data) {
                         if ($data) {
-                            return $query->whereYear('ingreso', $data);
+                            // Eliminar registros existentes en reportereservas
+                            \DB::table('reporte_años')->truncate();
+
+                            // Obtener los registros filtrados de reservas
+                            $reservas = $query->whereYear('ingreso', $data)->get();
+
+                            // Insertar los registros en reportereservas
+                            foreach ($reservas as $reserva) {
+                                \DB::table('reporte_años')->insert([
+                                    'nombres' => $reserva->nombres,
+                                    'apellidos' => $reserva->apellidos,
+                                    'direccion' => $reserva->direccion,
+                                    'telefono' => $reserva->telefono,
+                                    'ingreso' => $reserva->ingreso,
+                                    'salida' => $reserva->salida,
+                                    'tipohabitacion' => $reserva->tipohabitacion,
+                                    'nrohabitaciones' => $reserva->nrohabitaciones,
+                                    'tarifa' => $reserva->tarifa,
+                                    'metodopago' => $reserva->metodopago,
+                                    'ofertas' => $reserva->ofertas,
+                                    'created_at' => now(),
+                                    'updated_at' => now(),
+                                ]);
+                            }
+                            return $query;
                         } else {
                             return $query->whereRaw('1 = 0'); // No cargar datos por defecto
                         }

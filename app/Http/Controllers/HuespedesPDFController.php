@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ReporteAños;
-use App\Models\Reservas;
+use App\Models\ReporteHuespedes;
 use Illuminate\Http\Request;
 use PDF;
 
-class PDFController extends Controller
+class HuespedesPDFController extends Controller
 {
     public function downloadpdf(Request $request)
     {
         // Obtener los filtros de la solicitud
         $filters = json_decode($request->query('filters'), true);
 
-        $query = ReporteAños::query();
+        $query = ReporteHuespedes::query();
 
         // Aplicar los filtros a la consulta
         if (is_array($filters)) {
@@ -25,16 +24,16 @@ class PDFController extends Controller
             }
         }
 
-        $reservas = $query->get();
+        $huespedes = $query->get();
 
         $data = [
             'date' => date('m/d/y'),
-            'reservas' => $reservas,
+            'huespedes' => $huespedes,
         ];
 
-        $pdf = PDF::loadView('reservasPDF', $data)
+        $pdf = PDF::loadView('huespedesPDF', $data)
             ->setPaper('a4', 'landscape');
 
-        return $pdf->download('reporte_anual.pdf');
+        return $pdf->download('reporte_huespedes.pdf');
     }
 }

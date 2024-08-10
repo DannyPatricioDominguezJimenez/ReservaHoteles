@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HuespedesPDFController;
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use Filament\Http\Controllers\Auth\LogoutController;
@@ -74,3 +75,5 @@ Livewire::setUpdateRoute(function($handle) {
 
 Route::get('download', [PDFController::class, 'downloadpdf'])->name('download.tes');
 
+Route::get('download-huespedes-pdf', [HuespedesPDFController::class, 'downloadpdf'])
+    ->name('download.huespedes.pdf');

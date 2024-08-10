@@ -21,4 +21,9 @@ class ReporteAños extends Model
         'metodopago',
         'ofertas',
     ];
+
+    protected $casts = [
+        'ingreso' => 'date:Y-m-d',
+        'salida' => 'date:Y-m-d',
+    ];
 }
