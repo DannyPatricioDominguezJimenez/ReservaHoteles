@@ -71,20 +71,40 @@
             margin: 0 10px;
             color: #fff;
         }
+
         .section-separator {
-        height: 2rem; /* Ajusta el tamaño del separador según tus necesidades */
-        background-color: #f1f1f1; /* Cambia el color del separador según tus necesidades */
-    }
+            height: 2rem; /* Ajusta el tamaño del separador según tus necesidades */
+            background-color: #f1f1f1; /* Cambia el color del separador según tus necesidades */
+        }
 
-    .offer-image {
-        width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-        max-width: 400px; /* Limita el tamaño máximo de la imagen */
-        height: auto; /* Mantiene la proporción de la imagen */
-        margin: 0 auto; /* Centra la imagen */
-    }
+        .offer-image {
+            width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+            max-width: 400px; /* Limita el tamaño máximo de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin: 0 auto; /* Centra la imagen */
+        }
+
+        .video-container {
+            margin: 20px 0;
+        }
+
+        .video-container img {
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .video-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .video-container h2 {
+            margin-top: 10px;
+        }
+
+        .video-container p {
+            color: #555;
+        }
     </style>
-
-
 </head>
 
 <body>
@@ -106,7 +126,6 @@
                 </a>
                 <div class="flex justify-around">
                     <div class="flex justify-end">
-
                         <a class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
                             <img class="m-1 inline-block h-5 w-5 rounded-full ring-2 ring-white"
                                 src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
@@ -135,8 +154,7 @@
         </div>
         <nav id="bar" class="flex justify-center">
             <div class="flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4 text-center text-gray-500">
-            <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
-
+                <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
                 <a href="{{ route('reservas') }}" class="mx-8 hover:text-red-900">Reservas</a>
                 <a href="{{ url('/Ofertas') }}" class="mx-8 hover:text-red-900">Ofertas</a>
                 <a href="{{ url('/Conctactanos') }}" class="mx-8 hover:text-red-900">Contactanos</a>
@@ -144,81 +162,103 @@
         </nav>
     </div>
 
-    <!-- component -->
-
-   
-  
+    <!-- Banner de Ofertas -->
     <div class="relative w-full h-96">
         <img class="absolute h-full w-full object-cover object-center" src="{{ asset('imagenes/oceano.jpg') }}" alt="nature image" />
         <div class="absolute inset-0 h-full w-full bg-black/50"></div>
         <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
-            <h2 class="block antialiased tracking-normal font-sans font-semibold leading-[1.3] mb-4 text-3xl lg:text-4xl">Conoce Nuestras
-            Ofertas</h2>
+            <h2 class="block antialiased tracking-normal font-sans font-semibold leading-[1.3] mb-4 text-3xl lg:text-4xl">Conoce Nuestras Ofertas</h2>
         </div>
     </div>
 
+    <!-- Sección de Ofertas -->
+    <section class="bg-white dark:bg-gray-900">
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Oferta de Verano</h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Disfruta de nuestras ofertas especiales durante esta temporada. ¡No te lo pierdas!</p>
+                <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                    Get started
+                    <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rounded-lg">
+                <img src="ofertasimg/imagen1.jpeg" alt="Oferta de Verano" class="rounded-lg offer-image">
+            </div>
+        </div>
+    </section>
 
+    <div class="section-separator"></div>
 
     <section class="bg-white dark:bg-gray-900">
-    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Oferta de Verano</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Disfruta de nuestras ofertas especiales durante esta temporada. ¡No te lo pierdas!</p>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Get started
-                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-            </a>
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Oferta de Verano</h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Disfruta de nuestras ofertas especiales durante esta temporada. ¡No te lo pierdas!</p>
+                <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                    Get started
+                    <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rounded-lg">
+                <img src="ofertasimg/images2.jpeg" alt="Oferta de Verano" class="rounded-lg offer-image">
+            </div>
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rounded-lg">
-            <img src="ofertasimg/imagen1.jpeg" alt="Oferta de Verano" class="rounded-lg offer-image">
-        </div>                
-    </div>
-</section>
+    </section>
 
-<div class="section-separator"></div>
+    <div class="section-separator"></div>
 
-<section class="bg-white dark:bg-gray-900">
-    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Oferta de Verano</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Disfruta de nuestras ofertas especiales durante esta temporada. ¡No te lo pierdas!</p>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Get started
-                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-            </a>
+    <section class="bg-white dark:bg-gray-900">
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Oferta de Verano</h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Disfruta de nuestras ofertas especiales durante esta temporada. ¡No te lo pierdas!</p>
+                <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                    Get started
+                    <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rounded-lg">
+                <img src="ofertasimg/oferta1.png" alt="Oferta de Verano" class="rounded-lg offer-image">
+            </div>
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rounded-lg">
-            <img src="ofertasimg/images2.jpeg" alt="Oferta de Verano" class="rounded-lg offer-image">
-        </div>                
-    </div>
-</section>
+    </section>
 
-<div class="section-separator"></div>
+    <div class="section-separator"></div>
 
-<section class="bg-white dark:bg-gray-900">
-    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Oferta de Verano</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Disfruta de nuestras ofertas especiales durante esta temporada. ¡No te lo pierdas!</p>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Get started
-                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-            </a>
+    <!-- Sección de Videos -->
+    <section class="bg-gray-100 py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-6 text-center">Videos del Canal de YouTube</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @forelse ($videos as $video)
+                    @php
+                        $videoId = $video['id']['videoId'] ?? null;
+                        $title = $video['snippet']['title'];
+                        $description = $video['snippet']['description'];
+                        $thumbnail = $video['snippet']['thumbnails']['high']['url'];
+                    @endphp
+                    @if ($videoId)
+                        <div class="video-container bg-white p-4 rounded-lg shadow-lg">
+                            <a href="https://www.youtube.com/watch?v={{ $videoId }}" target="_blank">
+                                <img src="{{ $thumbnail }}" alt="{{ $title }}" class="w-full h-auto">
+                            </a>
+                            <h3 class="text-lg font-semibold mt-2">{{ $title }}</h3>
+                            <p class="text-gray-700 mt-1">{{ $description }}</p>
+                        </div>
+                    @endif
+                @empty
+                    <p class="text-center text-gray-500">No se encontraron videos.</p>
+                @endforelse
+            </div>
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rounded-lg">
-            <img src="ofertasimg/oferta1.png" alt="Oferta de Verano" class="rounded-lg offer-image">
-        </div>                
-    </div>
-</section>
-
-
-
+    </section>
 
     <footer class="footer">
         <div class="container">
@@ -230,7 +270,7 @@
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="links">
-            <a href="{{ route('inicio') }}">Inicio</a>
+                <a href="{{ route('inicio') }}">Inicio</a>
                 <span>|</span>
                 <a href="{{ route('reservas') }}">Reservas</a>
                 <span>|</span>
@@ -241,7 +281,7 @@
             <div class="address">
             </div>
             <div class="copyright">
-                © 2022 Your Company. All rights reserved.
+                © 2024 Your Company. All rights reserved.
             </div>
         </div>
     </footer>

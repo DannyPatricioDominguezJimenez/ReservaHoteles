@@ -15,14 +15,15 @@ use App\Http\Controllers\YouTubeController;
 Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
-Route::get('/Conctactanos', [YouTubeController::class, 'showVideos'])->name('prueba');
+Route::get('/Conctactanos', function () {
+    return view('prueba');
+});
 
 Route::get('/InicioSesion', function () {
     return view('iniciosesion');
 });
-Route::get('/Ofertas', function () {
-    return view('ofertas');
-});
+Route::get('/Ofertas', [YouTubeController::class, 'showVideos'])->name('ofertas');
+
 Route::get('/reservas', function () {
     return view('reservas');
 })->name('reservas'); // Aquí definimos el nombre de la ruta como 'reservas'

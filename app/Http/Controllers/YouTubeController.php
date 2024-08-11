@@ -33,7 +33,7 @@ class YouTubeController extends Controller
             $videos = [];
         }
 
-        // Pasar los videos a la vista 'prueba'
-        return view('prueba', ['videos' => $videos]);
+        // Pasar los videos a la vista 'ofertas'
+        return view('ofertas', ['videos' => $videos]);
     }
 }
