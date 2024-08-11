@@ -11,13 +11,13 @@ use App\Http\Controllers\HabitacionesController;
 use App\Http\Controllers\InicioSesionController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\YouTubeController;
+use App\Http\Controllers\WeatherController;
 
 Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
-Route::get('/Conctactanos', function () {
-    return view('prueba');
-});
+Route::get('/Conctactanos', [WeatherController::class, 'index'])->name('prueba');
+
 
 Route::get('/InicioSesion', function () {
     return view('iniciosesion');
