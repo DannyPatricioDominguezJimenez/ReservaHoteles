@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <title>Conctactanos</title>
+    <title>Videos del Canal de YouTube</title>
     <style>
+        .video-container {
+            margin: 20px 0;
+        }
+
+        .video-container img {
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .video-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .video-container h2 {
+            margin-top: 10px;
+        }
+
+        .video-container p {
+            color: #555;
+        }
+
         .footer {
             background-color: #000;
             color: #fff;
@@ -72,11 +92,10 @@
             color: #fff;
         }
     </style>
-
-
 </head>
 
 <body>
+    <!-- Encabezado del sitio -->
     <div class="bg-gold-400 border-b-2 shadow-md border-gray-100 pb-5">
         <div class="max-w-7xl mx-auto my-5 px-4 sm:px-6">
             <div
@@ -124,9 +143,7 @@
         </div>
         <nav id="bar" class="flex justify-center">
             <div class="flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4 text-center text-gray-500">
-            <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
-                
-
+                <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
                 <a href="{{ route('reservas') }}" class="mx-8 hover:text-red-900">Reservas</a>
                 <a href="{{ url('/Ofertas') }}" class="mx-8 hover:text-red-900">Ofertas</a>
                 <a href="{{ url('/Conctactanos') }}" class="mx-8 hover:text-red-900">Contactanos</a>
@@ -134,62 +151,81 @@
         </nav>
     </div>
 
-    <!-- component -->
-
+    <!-- Banner o imagen principal -->
     <div class="relative w-full h-96">
         <img class="absolute h-full w-full object-cover object-center" src="{{ asset('imagenes/Contactanos.jpg') }}" alt="nature image" />
         <div class="absolute inset-0 h-full w-full bg-black/50"></div>
         <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
-            <h2 class="block antialiased tracking-normal font-sans font-semibold leading-[1.3] mb-4 text-3xl lg:text-4xl">Información de Contacto</h2>
+            <h2 class="block antialiased tracking-normal font-sans font-semibold leading-[1.3] mb-4 text-3xl lg:text-4xl">Contacto</h2>
         </div>
     </div>
+
+    <!-- Sección de contacto -->
     <section class="pt-16">
-    <div class="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg">
-        <div class="text-left md:text-center mb-8 md:col-span-2">
-            <h2 class="text-3xl lg:text-4xl font-semibold">Para más información</h2>
-        </div>
-        <div class="info-container p-6 bg-gray-100 rounded-lg">
-            <div class="flex items-center mb-4">
-                <i class="fas fa-map-marker-alt text-xl mr-2"></i>
-                <span class="font-semibold">Vicente Rocafuerte E3-250 y Luis Chávez</span>
+        <div class="container mx-auto px-4 py-10">
+            <h2 class="text-2xl font-bold mb-6">Contáctanos</h2>
+            <p class="text-lg mb-4">Para consultas, reservas o cualquier otra información, por favor contáctanos a través de los siguientes métodos:</p>
+            <ul class="list-disc pl-5 mb-6">
+                <li>Teléfono: (123) 456-7890</li>
+                <li>Email: contacto@hotelfish.com</li>
+                <li>Dirección: Calle Ficticia 123, Ciudad, País</li>
+            </ul>
+            <p class="text-lg">También puedes seguirnos en nuestras redes sociales:</p>
+            <div class="social-media mt-4">
+                <a href="https://www.facebook.com" target="_blank" class="mr-4"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="mr-4"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="mr-4"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="flex items-center mb-4">
-                <i class="fas fa-city text-xl mr-2"></i>
-                <span class="font-semibold">Ciudad de Quito</span>
-            </div>
-            <div class="flex items-center mb-4">
-                <i class="fas fa-envelope text-xl mr-2"></i>
-                <span class="font-semibold">stay@arthotelsecuador.com</span>
-            </div>
-            <div class="flex items-center mb-4">
-                <i class="fas fa-phone text-xl mr-2"></i>
-                <span class="font-semibold">+593 (6) 292 8710 | +593 (99) 490 3097</span>
-            </div>
-            <div class="flex items-center mb-4">
-                <i class="fas fa-clock text-xl mr-2"></i>
-                <span class="font-semibold">Check-In: 14:00 pm</span>
-            </div>
-            <div class="flex items-center mb-4">
-                <i class="fas fa-clock text-xl mr-2"></i>
-                <span class="font-semibold">Check-Out: 12:00 pm</span>
-            </div>
-        </div>
-        <div class="map-container bg-gray-100 rounded-lg">
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.8648591545734!2d-74.00601568501109!3d40.7127760793317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDAnNDInND
-QuMCJOIDc0wrAwMCcwMC4wIlc!5e0!3m2!1sen!2s!4v1628238745098!5m2!1sen!2s"
-                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <!-- Mapa de contacto -->
+            <div class="mt-10">
+                <h3 class="text-xl font-semibold mb-4">Ubícanos</h3>
+                <div class="relative w-full h-64">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0934151428217!2d-122.41941548468112!3d37.77492927975956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858065d6b550b9%3A0x277f9c7cb9d485a8!2sSan%20Francisco%2C%20CA!5e0!3m2!1ses!2sus!4v1626364565180!5m2!1ses!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Sección de videos -->
+    <section class="pt-16">
+        <div class="container mx-auto px-4 py-10">
+            <h2 class="text-2xl font-bold mb-6">Videos del Canal de YouTube</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @forelse ($videos as $video)
+                    @php
+                        $videoId = $video['id']['videoId'] ?? null;
+                        $title = $video['snippet']['title'];
+                        $description = $video['snippet']['description'];
+                        $thumbnail = $video['snippet']['thumbnails']['high']['url'];
+                    @endphp
+                    @if ($videoId)
+                        <div class="video-container bg-gray-100 p-4 rounded-lg shadow-lg">
+                            <a href="https://www.youtube.com/watch?v={{ $videoId }}" target="_blank">
+                                <img src="{{ $thumbnail }}" alt="{{ $title }}" class="w-full h-auto">
+                            </a>
+                            <h3 class="text-lg font-semibold mt-2">{{ $title }}</h3>
+                            <p class="text-gray-700 mt-1">{{ $description }}</p>
+                        </div>
+                    @endif
+                @empty
+                    <p class="text-center text-gray-500">No se encontraron videos.</p>
+                @endforelse
+            </div>
+        </div>
+    </section>
 
-
-
-
+    <!-- Pie de página -->
     <footer class="footer">
-        <div class="container">
+        <div class="container mx-auto px-4">
             <div class="social-media">
                 <span>Encuéntranos</span>
                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -198,7 +234,7 @@ QuMCJOIDc0wrAwMCcwMC4wIlc!5e0!3m2!1sen!2s!4v1628238745098!5m2!1sen!2s"
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="links">
-            <a href="{{ route('inicio') }}">Inicio</a>
+                <a href="{{ route('inicio') }}">Inicio</a>
                 <span>|</span>
                 <a href="{{ route('reservas') }}">Reservas</a>
                 <span>|</span>
@@ -209,10 +245,11 @@ QuMCJOIDc0wrAwMCcwMC4wIlc!5e0!3m2!1sen!2s!4v1628238745098!5m2!1sen!2s"
             <div class="address">
             </div>
             <div class="copyright">
-                © 2022 Your Company. All rights reserved.
+                © 2024 Your Company. All rights reserved.
             </div>
         </div>
     </footer>
 </body>
 
 </html>
+s
