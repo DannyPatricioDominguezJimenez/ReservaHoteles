@@ -18,7 +18,7 @@ class ReporteHuespedesResource extends Resource
 {
     protected static ?string $model = Huespedes::class;
 
-    protected static ?string $navigationLabel = 'Reporte Huespedes';
+    protected static ?string $navigationLabel = 'Reporte Huespedes Mensual';
     protected static ?string $navigationIcon = 'heroicon-o-megaphone';
     protected static ?string $navigationGroup = 'Reportes';
 

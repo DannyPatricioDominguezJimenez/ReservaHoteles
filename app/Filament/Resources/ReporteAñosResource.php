@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Builder;
 class ReporteAñosResource extends Resource
 {
     protected static ?string $model = Reservas::class;
-    protected static ?string $navigationLabel = 'Reporte Reservas';
+    protected static ?string $navigationLabel = 'Reporte Reservas Anual';
     protected static ?string $navigationIcon = 'heroicon-o-megaphone';
     protected static ?string $navigationGroup = 'Reportes';
 

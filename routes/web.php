@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HuespedesPDFController;
+use App\Http\Controllers\MesesPDFController;
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use Filament\Http\Controllers\Auth\LogoutController;
@@ -77,3 +78,7 @@ Route::get('download', [PDFController::class, 'downloadpdf'])->name('download.te
 
 Route::get('download-huespedes-pdf', [HuespedesPDFController::class, 'downloadpdf'])
     ->name('download.huespedes.pdf');
+
+//Route::get('download-meses', [MesesPDFController::class, 'downloadpdf'])->name('download.meses');
+  
+Route::get('download/meses', [MesesPDFController::class, 'downloadpdf'])->name('download.meses');
